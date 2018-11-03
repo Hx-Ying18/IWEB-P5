@@ -50,7 +50,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Autores" id="jeH-Jb-Hqo"/>
-                    <navigationItem key="navigationItem" title="Title" id="5O3-qX-I8B"/>
+                    <navigationItem key="navigationItem" title="Title" id="5O3-qX-I8B">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="iMb-N9-zqV"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWb-Ki-3tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="xL9-j5-SpB" kind="relationship" relationship="rootViewController" id="gEz-HS-iPw"/>
+                        <segue destination="3UH-c4-cZX" kind="relationship" relationship="rootViewController" id="Rdj-dN-UuY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyQ-9P-Qkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -92,7 +94,9 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3UH-c4-cZX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="O15-hh-tgT"/>
+                    <navigationItem key="navigationItem" id="O15-hh-tgT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="IL5-AG-9BM"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eeA-Cl-8wK">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -148,7 +152,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Página" id="EPd-1d-oEF"/>
-                    <navigationItem key="navigationItem" title="Title" id="Oyc-ap-SED"/>
+                    <navigationItem key="navigationItem" title="Title" id="Oyc-ap-SED">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="WJd-Sk-t0L"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Geg-f7-nkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +253,4 @@
             <point key="canvasLocation" x="-970" y="1254"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gEz-HS-iPw"/>
-    </inferredMetricsTieBreakers>
 </document>
