@@ -35,14 +35,13 @@ class AuthorModel{
                 //                                                   encoding: .utf8 )
                 //                print(dataAsString)
                 
-                DispatchQueue.main.async {
+                do{
                     self.authors = try  JSONDecoder().decode([Author].self, from: data)
-                    //print(self.authors)
-                } else {
-                    print("Error decoding json")
+                    print(self.authors)
+                }catch let jsonErr {
+                    print("Error serializing json", jsonErr)
                 }
-        
-            } else { print("Error downloading")}
+            } else { print("Error downloading") }
             
         }
         
