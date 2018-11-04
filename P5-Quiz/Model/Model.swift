@@ -15,7 +15,7 @@ class Model{
     let quizzesURL = "/quizzes"
     let myToken = "15285c6fd5a9426d00fb"
     var authors: [Author]? = nil
-    var quizzes: [Quiz]? = nil
+    var quizzesPage: [Quiz]? = nil
     
     // Stores a new downloaded value author
     func downloadAuthors() {
@@ -51,7 +51,7 @@ class Model{
     }
     
     // Stores a new downloaded value author
-    func downloadQuizzes() {
+    func downloadQuizPage() {
         //// It is get the athours array
         // 1. It is used a Data Task pattern to do a get transaction over HTTPS: this gives a data object
         
@@ -71,8 +71,9 @@ class Model{
                 //                print(dataAsString)
                 
                 do{
-                    self.quizzes = try JSONDecoder().decode([Quiz].self, from: data)
-                    print(self.quizzes)
+                    let quizPage = try JSONDecoder().decode(QuizPage.self, from: data)
+                    self.quizzesPage = quizPage.quizzes
+                    print(self.quizzesPage)
                 }catch let jsonErr {
                     print("Error serializing json", jsonErr)
                 }

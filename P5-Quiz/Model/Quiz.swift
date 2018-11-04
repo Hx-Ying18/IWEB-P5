@@ -10,21 +10,16 @@ import Foundation
 
 // Decodable makes it simplier decode it form a JSON
 
-struct QuizPage : Decodable {
-    let quizzes : [Quiz]
-    let pageno: Int
-    let nexurl : String
-}
 
 struct Quiz: Decodable {
     let id: Int
     let question: String
-    let author: String?
+    let author: Author?
     struct Attachment : Codable {
         let filename: String
         let mime : String
         let url : String
     }
     let favourite: Bool
-    let tips: [String]?
+    let tips: [String?]?
 }

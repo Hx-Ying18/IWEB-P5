@@ -19,6 +19,7 @@
 		3A86DAC0218F5D7000F9F1AF /* QuizzesPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A86DABF218F5D7000F9F1AF /* QuizzesPageTableViewController.swift */; };
 		3A86DAC2218F5D8000F9F1AF /* Quizzes10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A86DAC1218F5D8000F9F1AF /* Quizzes10TableViewController.swift */; };
 		3A86DAC4218F5F7900F9F1AF /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A86DAC3218F5F7900F9F1AF /* Quiz.swift */; };
+		3A86DAC6218F6DEF00F9F1AF /* QuizPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A86DAC5218F6DEF00F9F1AF /* QuizPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3A86DABF218F5D7000F9F1AF /* QuizzesPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesPageTableViewController.swift; sourceTree = "<group>"; };
 		3A86DAC1218F5D8000F9F1AF /* Quizzes10TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quizzes10TableViewController.swift; sourceTree = "<group>"; };
 		3A86DAC3218F5F7900F9F1AF /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		3A86DAC5218F6DEF00F9F1AF /* QuizPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				3A0B0244218F2C8F00BB8E61 /* Model.swift */,
 				3A0B0246218F2E4E00BB8E61 /* Author.swift */,
 				3A86DAC3218F5F7900F9F1AF /* Quiz.swift */,
+				3A86DAC5218F6DEF00F9F1AF /* QuizPage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				3A6033E3218DB31E00D28AF7 /* AppDelegate.swift in Sources */,
 				3A0B0247218F2E4E00BB8E61 /* Author.swift in Sources */,
 				3A86DAC4218F5F7900F9F1AF /* Quiz.swift in Sources */,
+				3A86DAC6218F6DEF00F9F1AF /* QuizPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

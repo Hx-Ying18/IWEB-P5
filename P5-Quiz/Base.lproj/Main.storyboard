@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="-969" y="531"/>
         </scene>
-        <!--Página-->
+        <!--10-->
         <scene sceneID="Dya-mM-foY">
             <objects>
-                <tableViewController id="GHt-l2-VeN" userLabel="Página" customClass="QuizzesTableViewController" customModule="P5_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="GHt-l2-VeN" userLabel="10" customClass="QuizzesPageTableViewController" customModule="P5_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fSq-mc-6T5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,25 +145,25 @@
                             <outlet property="delegate" destination="GHt-l2-VeN" id="ALt-dj-hvt"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Página" id="EPd-1d-oEF"/>
+                    <tabBarItem key="tabBarItem" title="10" id="EPd-1d-oEF"/>
                     <navigationItem key="navigationItem" title="Title" id="Oyc-ap-SED">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="WJd-Sk-t0L"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Geg-f7-nkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-110" y="234"/>
+            <point key="canvasLocation" x="-86" y="940"/>
         </scene>
-        <!--10-->
+        <!--Page-->
         <scene sceneID="V94-xe-0dp">
             <objects>
-                <tableViewController id="Xwk-oo-9FJ" userLabel="10" customClass="QuizzesTableViewController" customModule="P5_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Xwk-oo-9FJ" userLabel="Page" customClass="QuizzesPageTableViewController" customModule="P5_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cta-xH-KVi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="8sJ-Nq-yK4" detailTextLabel="fi5-Vf-OLI" style="IBUITableViewCellStyleSubtitle" id="RKV-YH-g7j">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Quiz Cell" textLabel="8sJ-Nq-yK4" detailTextLabel="fi5-Vf-OLI" style="IBUITableViewCellStyleSubtitle" id="RKV-YH-g7j">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RKV-YH-g7j" id="ntP-So-wRx">
@@ -193,12 +193,12 @@
                             <outlet property="delegate" destination="Xwk-oo-9FJ" id="Khh-zj-pj1"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="10" id="4Q7-nX-1zm"/>
+                    <tabBarItem key="tabBarItem" title="Página" id="4Q7-nX-1zm"/>
                     <navigationItem key="navigationItem" title="Title" id="OqW-T9-Z7R"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wzt-H7-BjN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-111" y="926"/>
+            <point key="canvasLocation" x="-87" y="204"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="LNk-9Z-TD7">

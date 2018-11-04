@@ -38,8 +38,8 @@ class QuizzesAllTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        model.downloadQuizzes()
-        return model.quizzes?.count ?? 0
+        model.downloadQuizPage()
+        return model.quizzesPage?.count ?? 0
     
     }
 
@@ -47,10 +47,10 @@ class QuizzesAllTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath)
 
-        model.downloadQuizzes()
+        model.downloadQuizPage()
         // print(model.authors ?? "")
-        let quiz = model.quizzes?[indexPath.row]
-        cell.textLabel?.text = quiz?.author ?? "Anónimo"
+        let quiz = model.quizzesPage?[indexPath.row]
+        cell.textLabel?.text = quiz?.author?.username ?? "Anónimo"
         cell.detailTextLabel?.text = quiz?.question
         //cell.imageView?.image = UIImage(named: .icon)
         

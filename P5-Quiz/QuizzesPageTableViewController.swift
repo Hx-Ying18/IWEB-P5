@@ -10,45 +10,53 @@ import UIKit
 
 class QuizzesPageTableViewController: UITableViewController {
 
+    var model = Model()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // self.title = "Quizzes en páginas"
+        
+        // self.title = "Todos los Quizzes"
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        model.downloadQuizPage()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        model.downloadQuizPage()
+        return model.quizzesPage?.count ?? 0
+        
     }
-
-    /*
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath)
+        
+        model.downloadQuizPage()
+        // print(model.authors ?? "")
+        let quiz = model.quizzesPage?[indexPath.row]
+        cell.textLabel?.text = quiz?.author?.username ?? "Anónimo"
+        cell.detailTextLabel?.text = quiz?.question
+        //cell.imageView?.image = UIImage(named: .icon)
+        
         return cell
     }
-    */
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
