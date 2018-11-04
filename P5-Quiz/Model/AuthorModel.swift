@@ -36,7 +36,7 @@ class AuthorModel{
                 //                print(dataAsString)
                 
                 do{
-                    self.authors = try  JSONDecoder().decode([Author].self, from: data)
+                    self.authors = try JSONDecoder().decode([Author].self, from: data)
                     print(self.authors)
                 }catch let jsonErr {
                     print("Error serializing json", jsonErr)
