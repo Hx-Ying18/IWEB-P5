@@ -53,7 +53,8 @@ class QuizzesPageTableViewController: UITableViewController {
         let quiz = model.quizzesPage?[indexPath.row]
         cell.textLabel?.text = quiz?.author?.username ?? "Anónimo"
         cell.detailTextLabel?.text = quiz?.question
-        //cell.imageView?.image = UIImage(named: .icon)
+        downloadIcon()
+        cell.imageView?.image = UIImage(named: .icon)
         
         return cell
     }
@@ -102,4 +103,36 @@ class QuizzesPageTableViewController: UITableViewController {
     }
     */
 
+     //Download an set the icon when neccesary.
+    func downloadIcon(iconUrl: String?){
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+
+        guard let imgUrl = iconUrl else { return }
+        let url = URL(string: imgUrl)!
+
+        let task = session.downloadTask(with: url) { (location: URL?,
+                                                      response: URLResponse?,
+                                                      error: Error?) in
+            if error == nil && (response as! HTTPURLResponse).statusCode == 200 { // If there are no errors in the connection
+
+                if let data = Data(contentsOf: location!), //unwrap the value data
+                    let img = UIImage(data: data){
+                    DispatchQueue.main.async {
+                        self.imageView.image = img
+                    }
+                } else {
+                    print("Error serializing json")
+                }
+            } else { print("Error downloading") }
+
+            DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            }
+        }
+        task.resume()
+    }
+
+    
 }
