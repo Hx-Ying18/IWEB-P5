@@ -13,7 +13,7 @@
         <!--Autores-->
         <scene sceneID="YMj-cS-wZV">
             <objects>
-                <tableViewController id="xL9-j5-SpB" userLabel="Autores" customClass="QuizzesTableViewController" customModule="P5_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xL9-j5-SpB" userLabel="Autores" customClass="QuizzesAuthorsTableViewController" customModule="P5_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rfm-Bg-3qL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyQ-9P-Qkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2423" y="197"/>
+            <point key="canvasLocation" x="-1948" y="530"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YHo-Sb-rDX">

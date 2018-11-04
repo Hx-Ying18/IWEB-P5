@@ -1,5 +1,5 @@
 //
-//  QuizzesTableViewController.swift
+//  QuizzesAuthorsTableViewController.swift
 //  P5-Quiz
 //
 //  Created by Adrian on 03/11/2018.
@@ -8,8 +8,15 @@
 
 import UIKit
 
-class QuizzesTableViewController: UITableViewController {
+class QuizzesAuthorsTableViewController: UITableViewController {
 
+    
+    let apiURL = "https://quiz2019.herokuapp.com/api"
+    let usersURL = "/users"
+    let myToken = "15285c6fd5a9426d00fb"
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +25,43 @@ class QuizzesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //// It is get the athours array
+        // 1. It is used a Data Task pattern to do a get transaction over HTTPS: this gives a data object
+        
+        let session = URLSession.shared // Create a session
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true // SHow activity
+        let path = "\(apiURL)\(usersURL)?token=\(myToken)" // Create the path
+        guard let url = URL(string: path) else { return } // Unwrap the url
+        
+        // Create the task
+        let task = session.dataTask(with: url){ (data: Data?,
+                                                 response: URLResponse?,
+                                                 error: Error?) in
+            if error == nil && (response as! HTTPURLResponse).statusCode == 200 { // If there are no errors in the connection
+                
+                guard let data = data else { return } //unwrap the value data
+                let dataAsString = String(data: data,
+                                                   encoding: .utf8 )
+                print(dataAsString)
+            }
+            
+        }
+        
+        task.resume()
+        
+//        do {
+//            let task = session.dataTask(with: url){
+//                (data: Data?,
+//                response: URLResponse?,
+//                error: Error?) in
+//                if error == nil && (response as! HTTPURLResponse).statusCode == 200 {
+//                    if let json = try JSONSerialization.jsonObject(with: data, options: .mutableCOntainers)
+//                    { print(json)
+//                    }
+//                }
+//            }
+//        } catch let jsonErr{}
     }
 
     override func didReceiveMemoryWarning() {
