@@ -8,6 +8,13 @@
 
 import UIKit
 
+// Decodable makes it simplier decode it form a JSON
+struct Author: Decodable {
+    let id: Int
+    let isAdmin: Bool?
+    let username: String
+}
+
 class QuizzesAuthorsTableViewController: UITableViewController {
 
     
@@ -41,9 +48,16 @@ class QuizzesAuthorsTableViewController: UITableViewController {
             if error == nil && (response as! HTTPURLResponse).statusCode == 200 { // If there are no errors in the connection
                 
                 guard let data = data else { return } //unwrap the value data
-                let dataAsString = String(data: data,
-                                                   encoding: .utf8 )
-                print(dataAsString)
+//                let dataAsString = String(data: data,
+//                                                   encoding: .utf8 )
+//                print(dataAsString)
+                
+                do{
+                    let authors = try  JSONDecoder().decode([Author].self, from: data)
+                    print(authors)
+                }catch let jsonErr {
+                    print("Error serializing json", jsonErr)
+                }
             }
             
         }
