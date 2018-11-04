@@ -8,24 +8,15 @@
 
 import UIKit
 
-// Decodable makes it simplier decode it form a JSON
-struct Author: Decodable {
-    let id: Int
-    let isAdmin: Bool?
-    let username: String
-}
 
-class QuizzesAuthorsTableViewController: UITableViewController {
-
-    
-    let apiURL = "https://quiz2019.herokuapp.com/api"
-    let usersURL = "/users"
-    let myToken = "15285c6fd5a9426d00fb"
-    
+class QuizzesAuthorsTableViewController: UITableViewController {    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let model = AuthorModel()
+        var currentAuthors: [Author]? = nil
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,49 +24,11 @@ class QuizzesAuthorsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        //// It is get the athours array
-        // 1. It is used a Data Task pattern to do a get transaction over HTTPS: this gives a data object
-        
-        let session = URLSession.shared // Create a session
+        // When it is loaded authors are loaded
         UIApplication.shared.isNetworkActivityIndicatorVisible = true // SHow activity
-        let path = "\(apiURL)\(usersURL)?token=\(myToken)" // Create the path
-        guard let url = URL(string: path) else { return } // Unwrap the url
+        model.downloadAuthors()
+        currentAuthors = model.authors
         
-        // Create the task
-        let task = session.dataTask(with: url){ (data: Data?,
-                                                 response: URLResponse?,
-                                                 error: Error?) in
-            if error == nil && (response as! HTTPURLResponse).statusCode == 200 { // If there are no errors in the connection
-                
-                guard let data = data else { return } //unwrap the value data
-//                let dataAsString = String(data: data,
-//                                                   encoding: .utf8 )
-//                print(dataAsString)
-                
-                do{
-                    let authors = try  JSONDecoder().decode([Author].self, from: data)
-                    print(authors)
-                }catch let jsonErr {
-                    print("Error serializing json", jsonErr)
-                }
-            }
-            
-        }
-        
-        task.resume()
-        
-//        do {
-//            let task = session.dataTask(with: url){
-//                (data: Data?,
-//                response: URLResponse?,
-//                error: Error?) in
-//                if error == nil && (response as! HTTPURLResponse).statusCode == 200 {
-//                    if let json = try JSONSerialization.jsonObject(with: data, options: .mutableCOntainers)
-//                    { print(json)
-//                    }
-//                }
-//            }
-//        } catch let jsonErr{}
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,12 +39,13 @@ class QuizzesAuthorsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
+        // Must check if it is different form nil myAuthors.
         return 0
     }
 
