@@ -11,12 +11,12 @@ import UIKit
 
 class QuizzesAuthorsTableViewController: UITableViewController {    
     
+    let model = AuthorModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let model = AuthorModel()
-        var currentAuthors: [Author]? = nil
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,7 +27,6 @@ class QuizzesAuthorsTableViewController: UITableViewController {
         // When it is loaded authors are loaded
         UIApplication.shared.isNetworkActivityIndicatorVisible = true // SHow activity
         model.downloadAuthors()
-        currentAuthors = model.authors
         
     }
 
@@ -45,20 +44,25 @@ class QuizzesAuthorsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        // Must check if it is different form nil myAuthors.
-        return 0
+        // If have no authors yet it must represent nothing
+        model.downloadAuthors()
+        print(model.authors ?? "Vacío")
+        print(model.authors?.count ?? 0)
+        return model.authors?.count ?? 0
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Author Cell", for: indexPath)
+
+        model.downloadAuthors()
+        print(model.authors ?? "")
+        let author = model.authors?[indexPath.row]
+        cell.textLabel?.text = author?.username ?? ""
 
         return cell
     }
-    */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
