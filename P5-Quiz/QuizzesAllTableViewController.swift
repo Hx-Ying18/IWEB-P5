@@ -1,33 +1,27 @@
 //
-//  QuizzesAuthorsTableViewController.swift
+//  QuizzesAllTableViewController.swift
 //  P5-Quiz
 //
-//  Created by Adrian on 03/11/2018.
+//  Created by Adrian on 04/11/2018.
 //  Copyright © 2018 Adrian. All rights reserved.
 //
 
 import UIKit
 
+class QuizzesAllTableViewController: UITableViewController {
 
-class QuizzesAuthorsTableViewController: UITableViewController {    
-    
-    let model = Model()
+    var model = Model()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // self.title = "Autores de los Quizzes"
 
+        // self.title = "Todos los Quizzes"
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        // When it is loaded authors are loaded
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true // SHow activity
-        model.downloadAuthors()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,25 +38,26 @@ class QuizzesAuthorsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        // If have no authors yet it must represent nothing
-        model.downloadAuthors()
-//        print(model.authors ?? "Vacío")
-//        print(model.authors?.count ?? 0)
-        return model.authors?.count ?? 0
+        model.downloadQuizzes()
+        return model.quizzes?.count ?? 0
+    
     }
 
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Author Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath)
 
-        model.downloadAuthors()
+        model.downloadQuizzes()
         // print(model.authors ?? "")
-        let author = model.authors?[indexPath.row]
-        cell.textLabel?.text = author?.username ?? ""
-
+        let quiz = model.quizzes?[indexPath.row]
+        cell.textLabel?.text = quiz?.author ?? "Anónimo"
+        cell.detailTextLabel?.text = quiz?.question
+        //cell.imageView?.image = UIImage(named: .icon)
+        
         return cell
     }
     
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
