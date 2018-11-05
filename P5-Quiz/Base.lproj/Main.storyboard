@@ -109,13 +109,13 @@
         <!--10-->
         <scene sceneID="Dya-mM-foY">
             <objects>
-                <tableViewController id="GHt-l2-VeN" userLabel="10" customClass="QuizzesPageTableViewController" customModule="P5_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="GHt-l2-VeN" userLabel="10" customClass="Quizzes10TableViewController" customModule="P5_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fSq-mc-6T5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="vcu-gx-jAJ" detailTextLabel="Qhs-tW-OdM" style="IBUITableViewCellStyleSubtitle" id="knt-Aq-7iz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Quiz Cell" textLabel="vcu-gx-jAJ" detailTextLabel="Qhs-tW-OdM" style="IBUITableViewCellStyleSubtitle" id="knt-Aq-7iz">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="knt-Aq-7iz" id="GhW-tw-73S">

@@ -11,5 +11,5 @@ import Foundation
 struct QuizPage : Decodable {
     let quizzes : [Quiz]
     let pageno: Int
-    let nexurl : String?
+    let nextUrl : String?
 }

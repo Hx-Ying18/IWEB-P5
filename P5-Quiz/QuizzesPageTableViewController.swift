@@ -22,7 +22,7 @@ class QuizzesPageTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        model.downloadQuizPage()
+        model.downloadQuizPage(pageno: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,7 +39,7 @@ class QuizzesPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        model.downloadQuizPage()
+        model.downloadQuizPage(pageno: 0)
         return model.quizzesPage?.count ?? 0
         
     }
@@ -48,7 +48,7 @@ class QuizzesPageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath)
         
-        model.downloadQuizPage()
+        model.downloadQuizPage(pageno: 0)
         // print(model.authors ?? "")
         let quiz = model.quizzesPage?[indexPath.row]
         cell.textLabel?.text = quiz?.author?.username ?? "Anónimo"
