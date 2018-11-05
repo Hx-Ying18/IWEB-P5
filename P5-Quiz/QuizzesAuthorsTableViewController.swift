@@ -25,7 +25,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         // When it is loaded authors are loaded
-        updateAuthors()
+        model.downloadAuthors()
         
     }
 
@@ -43,7 +43,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        updateAuthors()
+        model.downloadAuthors()
         return model.authors?.count ?? 0
     }
 
@@ -51,7 +51,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Author Cell", for: indexPath)
 
-        updateAuthors()
+        model.downloadAuthors()
         // print(model.authors ?? "")
         let author = model.authors?[indexPath.row]
         cell.textLabel?.text = author?.username ?? ""
@@ -105,13 +105,13 @@ class QuizzesAuthorsTableViewController: UITableViewController {
     */
     
     // Download quiz page and realod data in table view
-    func updateAuthors() {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true // SHow activity
-        model.downloadAuthors()
-        DispatchQueue.main.async {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            self.tableView.reloadData()
-        }
-    }
+//    func updateAuthors() {
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true // SHow activity
+//        model.downloadAuthors()
+//        DispatchQueue.main.async {
+//            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+//            self.tableView.reloadData()
+//        }
+//    }
 
 }
