@@ -34,6 +34,14 @@ class PlayViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Show Tips"{
+            let ttvc = segue.destination as! TipsTableViewController
+            
+            ttvc.myTips = myQuiz?.tips
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

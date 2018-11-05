@@ -21,5 +21,5 @@ struct Quiz: Decodable {
         let url : String
     }
     let favourite: Bool
-    let tips: [String?]?
+    let tips: [String]?
 }
