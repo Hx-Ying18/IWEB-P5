@@ -10,10 +10,21 @@ import UIKit
 
 class PlayViewController: UIViewController {
 
+    @IBOutlet weak var questionLabel: UILabel!
+    
+    
+    @IBOutlet weak var answerText: UITextField!
+    
+    @IBOutlet weak var quizImage: UIImageView!
+    
+    
+    @IBOutlet weak var checkButton: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "Responda:"
     }
 
     override func didReceiveMemoryWarning() {

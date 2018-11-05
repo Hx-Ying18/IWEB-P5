@@ -58,20 +58,55 @@
                     <view key="view" contentMode="scaleToFill" id="KhZ-1l-en4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnI-br-0FM">
+                                <rect key="frame" x="166" y="176" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6D-Aj-g0Q">
+                                <rect key="frame" x="46" y="263" width="269" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uBv-GG-WCX">
+                                <rect key="frame" x="67" y="319" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comprobar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GY-p9-g85">
+                                <rect key="frame" x="137" y="522" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.71634783251416168" green="1" blue="0.4925077041356366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="gXV-UO-3q0"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="answerText" destination="z6D-Aj-g0Q" id="tkG-mS-dK7"/>
+                        <outlet property="checkButton" destination="4GY-p9-g85" id="MMO-0B-7Nk"/>
+                        <outlet property="questionLabel" destination="VnI-br-0FM" id="kNm-26-fRI"/>
+                        <outlet property="quizImage" destination="uBv-GG-WCX" id="agT-1u-VWk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2L-gq-v6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="1515"/>
+            <point key="canvasLocation" x="1061.5999999999999" y="203.74812593703149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f6z-VH-FmZ">
             <objects>
                 <navigationController id="GV1-0c-h2I" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mgv-Wm-V2q">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="mgv-Wm-V2q">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -138,9 +173,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="y9G-K3-E9w" kind="show" identifier="To Tips" id="7L6-nH-r8z"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -190,7 +222,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="y9G-K3-E9w" kind="show" identifier="To Tips" id="3bR-qF-U7q"/>
+                                    <segue destination="y9G-K3-E9w" kind="show" trigger="accessoryAction" id="K5h-bI-EOJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -238,9 +270,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="y9G-K3-E9w" kind="show" identifier="To Tips" id="6gD-ci-CT1"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -256,7 +285,4 @@
             <point key="canvasLocation" x="-970" y="1254"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6gD-ci-CT1"/>
-    </inferredMetricsTieBreakers>
 </document>
