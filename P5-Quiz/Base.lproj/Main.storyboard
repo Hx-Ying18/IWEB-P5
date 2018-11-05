@@ -84,6 +84,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tt9-nI-hd8">
+                                <rect key="frame" x="0.0" y="19" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="159-FE-WIb">
+                                        <barButtonItem key="rightBarButtonItem" title="Pistas" id="A46-kw-p3G"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.71634783251416168" green="1" blue="0.4925077041356366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="gXV-UO-3q0"/>
