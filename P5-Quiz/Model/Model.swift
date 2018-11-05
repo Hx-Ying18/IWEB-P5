@@ -53,6 +53,40 @@ class Model{
         task.resume()
     }
     
+    // GIves a certain image
+    func downloadImage(imageUrl : String) -> Data? {
+        //// It is get the athours array
+        // 1. It is used a Data Task pattern to do a get transaction over HTTPS: this gives a data object
+        var imgData : Data? = nil
+        
+        let session = URLSession.shared // Create a session
+        let path = "\(imageUrl)" // Create the path
+        guard let url = URL(string: path) else { return nil } // Unwrap the url
+        
+        // Create the task
+        let task = session.dataTask(with: url){ (data: Data?,
+            response: URLResponse?,
+            error: Error?) in
+            if error == nil && (response as! HTTPURLResponse).statusCode == 200 { // If there are no errors in the connection
+                
+                guard let data = data else { return } //unwrap the value data
+                //                let dataAsString = String(data: data,
+                //                                                   encoding: .utf8 )
+                //                print(dataAsString)
+                
+                do{
+                    let imgData = UIImage(data: data!)
+                    // print(self.authors)
+                }catch let jsonErr {
+                    print("Error serializing json", jsonErr)
+                }
+            } else { print("Error downloading") }
+            
+        }
+        task.resume()
+        return imgData
+    }
+    
     func downloadQuizPage(pageno : Int) {
         //// It is get the athours array
         // 1. It is used a Data Task pattern to do a get transaction over HTTPS: this gives a data object
