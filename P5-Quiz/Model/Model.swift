@@ -71,9 +71,11 @@ class Model{
                 //                print(dataAsString)
                 
                 do{
-                    let quizPage = try JSONDecoder().decode(QuizPage.self, from: data)
-                    self.quizzesPage = quizPage.quizzes
-                    print(self.quizzesPage)
+                    DispatchQueue.main.async {
+                        let quizPage = try JSONDecoder().decode(QuizPage.self, from: data)
+                        self.quizzesPage = quizPage.quizzes
+                        print(self.quizzesPage)
+                    }
                 }catch let jsonErr {
                     print("Error serializing json", jsonErr)
                 }
