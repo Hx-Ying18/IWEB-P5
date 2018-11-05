@@ -22,7 +22,8 @@ class QuizzesPageTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        model.downloadQuizPage()
+        
+        updateQuizPage()
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,7 +40,7 @@ class QuizzesPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        model.downloadQuizPage()
+        updateQuizPage()
         return model.quizzesPage?.count ?? 0
         
     }
@@ -48,7 +49,7 @@ class QuizzesPageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath)
         
-        model.downloadQuizPage()
+        updateQuizPage()
         // print(model.authors ?? "")
         let quiz = model.quizzesPage?[indexPath.row]
         cell.textLabel?.text = quiz?.author?.username ?? "Anónimo"
@@ -101,5 +102,14 @@ class QuizzesPageTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // Download quiz page and realod data in table view
+    func updateQuizPage() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true // SHow activity
+        model.downloadQuizPage()
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            self.tableView.reloadData()
+        }
+    }
 }

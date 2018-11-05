@@ -104,7 +104,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
     }
     */
     
-    // Download quiz page and realod data in table view
+    // Download author and realod data in table view
     func updateAuthors() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true // SHow activity
         model.downloadAuthors()
