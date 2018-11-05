@@ -10,6 +10,8 @@ import Foundation
 
 class Model{
     
+    //https://quiz2019.herokuapp.com/api/users?token=15285c6fd5a9426d00fb
+    //https://quiz2019.herokuapp.com/api/quizzes?token=15285c6fd5a9426d00fb
     let apiURL = "https://quiz2019.herokuapp.com/api"
     let usersURL = "/users"
     let quizzesURL = "/quizzes"
