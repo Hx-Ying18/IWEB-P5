@@ -63,22 +63,23 @@ class Model{
         let task = session.dataTask(with: url){ (data: Data?,
             response: URLResponse?,
             error: Error?) in
-            if error == nil && (response as! HTTPURLResponse).statusCode == 200 { // If there are no errors in the connection
-                
-                guard let data = data else { return } //unwrap the value data
-                //                let dataAsString = String(data: data,
-                //                                                   encoding: .utf8 )
-                //                print(dataAsString)
-                
-                do{
-                    let quizPage = try JSONDecoder().decode(QuizPage.self, from: data)
-                    self.quizzesPage = quizPage.quizzes
-                    print(self.quizzesPage)
-                }catch let jsonErr {
-                    print("Error serializing json", jsonErr)
-                }
-            } else { print("Error downloading") }
-            
+            DispatchQueue.main.async{
+                if error == nil && (response as! HTTPURLResponse).statusCode == 200 { // If there are no errors in the connection
+                    
+                    guard let data = data else { return } //unwrap the value data
+                    //                let dataAsString = String(data: data,
+                    //                                                   encoding: .utf8 )
+                    //                print(dataAsString)
+           
+                    do{
+                        let quizPage = try JSONDecoder().decode(QuizPage.self, from: data)
+                        self.quizzesPage = quizPage.quizzes
+                        print(self.quizzesPage)
+                    }catch let jsonErr {
+                        print("Error serializing json", jsonErr)
+                    }
+                } else { print("Error downloading") }
+            }
         }
         
         task.resume()
