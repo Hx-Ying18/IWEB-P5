@@ -101,5 +101,16 @@ class QuizzesPageTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "Lets Play"){
+            let pvc = segue.destination as! PlayViewController
+            
+            if let ip = tableView.indexPathForSelectedRow{
+                pvc.myQuiz = model.quizzesPage?[ip.row]
+            }
+        }
+        else {}
+    }
 
 }

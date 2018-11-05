@@ -20,6 +20,8 @@ class PlayViewController: UIViewController {
     
     @IBOutlet weak var checkButton: UILabel!
     
+    var myQuiz : Quiz? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

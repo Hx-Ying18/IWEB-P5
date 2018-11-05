@@ -231,7 +231,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="y9G-K3-E9w" kind="show" trigger="accessoryAction" id="K5h-bI-EOJ"/>
+                                    <segue destination="y9G-K3-E9w" kind="show" identifier="Lets Play" id="Z05-gM-d0g"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
