@@ -125,12 +125,14 @@ class Model{
     func downloadAllQuizzes(){
         
         var i = 1
+        print(downloadQuizPageGiving(pageno: 1))
         // while(downloadQuizPageGiving(pageno: i)?.nextUrl != ""){
         while( i < 4){
+            
             for quiz in downloadQuizPageGiving(pageno: i)!.quizzes{
             quizzesAll.append(quiz)
+            i+=1
             }
-        i+=1
         }
         print(quizzesAll)
         
