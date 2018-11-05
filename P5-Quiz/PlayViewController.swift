@@ -12,11 +12,9 @@ class PlayViewController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
     
-    
     @IBOutlet weak var answerText: UITextField!
     
     @IBOutlet weak var quizImage: UIImageView!
-    
     
     @IBOutlet weak var checkButton: UILabel!
     
@@ -27,6 +25,8 @@ class PlayViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = "Responda:"
+        questionLabel.text = myQuiz?.question
+        
     }
 
     override func didReceiveMemoryWarning() {
