@@ -12,6 +12,8 @@ class QuizzesPageTableViewController: UITableViewController {
 
     var model = Model()
     
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +24,9 @@ class QuizzesPageTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        model.downloadQuizPage(pageno: 0)
+        
+        // Initial load
+        updateQuizPage()
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,7 +43,6 @@ class QuizzesPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        model.downloadQuizPage(pageno: 0)
         return model.quizzesPage?.count ?? 0
         
     }
@@ -112,5 +115,22 @@ class QuizzesPageTableViewController: UITableViewController {
         }
         else {}
     }
+    
+    func updateQuizPage(){
+        DispatchQueue.main.async {
+            self.refreshButton.isEnabled = false
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        }
+        model.downloadQuizPage(pageno: 0)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.refreshButton.isEnabled = true
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
+        
+    }
 
+    @IBAction func refreshTap(_ sender: UIBarButtonItem) {
+        updateQuizPage()
+    }
 }
