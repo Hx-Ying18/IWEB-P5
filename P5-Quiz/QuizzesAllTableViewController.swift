@@ -49,9 +49,9 @@ class QuizzesAllTableViewController: UITableViewController {
 
         model.downloadQuizPage(pageno: 0)
         // print(model.authors ?? "")
-        let quiz = model.quizzesPage?[indexPath.row]
-        cell.textLabel?.text = quiz?.author?.username ?? "Anónimo"
-        cell.detailTextLabel?.text = quiz?.question
+        let quiz = model.quizzesPage[indexPath.row]
+        cell.textLabel?.text = quiz.author?.username ?? "Anónimo"
+        cell.detailTextLabel?.text = quiz.question
         //cell.imageView?.image = UIImage(named: .icon)
         
         return cell

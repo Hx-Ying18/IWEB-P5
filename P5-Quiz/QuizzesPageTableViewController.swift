@@ -43,7 +43,7 @@ class QuizzesPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return model.quizzesPage?.count ?? 0
+        return model.quizzesPage.count
         
     }
     
@@ -53,9 +53,9 @@ class QuizzesPageTableViewController: UITableViewController {
         
         model.downloadQuizPage(pageno: 0)
         // print(model.authors ?? "")
-        let quiz = model.quizzesPage?[indexPath.row]
-        cell.textLabel?.text = quiz?.author?.username ?? "Anónimo"
-        cell.detailTextLabel?.text = quiz?.question
+        let quiz = model.quizzesPage[indexPath.row]
+        cell.textLabel?.text = quiz.author?.username ?? "Anónimo"
+        cell.detailTextLabel?.text = quiz.question
         //cell.imageView?.image = UIImage(named: .icon)
         
         return cell
@@ -110,7 +110,7 @@ class QuizzesPageTableViewController: UITableViewController {
             let pvc = segue.destination as! PlayViewController
             
             if let ip = tableView.indexPathForSelectedRow{
-                pvc.myQuiz = model.quizzesPage?[ip.row]
+                pvc.myQuiz = model.quizzesPage[ip.row]
             }
         }
         else {}
