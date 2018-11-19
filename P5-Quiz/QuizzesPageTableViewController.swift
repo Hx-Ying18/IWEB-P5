@@ -122,7 +122,7 @@ class QuizzesPageTableViewController: UITableViewController {
             self.refreshButton.isEnabled = false
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
         }
-        downloadQuizzes(pagenoIn: 1)
+        downloadQuizzes()
         DispatchQueue.main.async {
             self.refreshButton.isEnabled = true
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -134,12 +134,24 @@ class QuizzesPageTableViewController: UITableViewController {
         updateQuizPage()
     }
     
-    func downloadQuizzes(pagenoIn : Int){
+    func downloadQuizzes(){
+        
+        // In the mian is reset the table
+        DispatchQueue.main.async {
+            self.model.quizzesAll = []
+            self.tableView.reloadData()
+        }
+        
+        //        let session = URLSession.shared // Create a session
+        download(pagenoIn : 1)
+    }
+    
+    func download(pagenoIn : Int){
         
         //        let session = URLSession.shared // Create a session
         var pageno : Int = pagenoIn// NUmber of the page
         let path = "\(model.apiURL)\(model.quizzesURL)?token=\(model.myToken)&pageno=\(pageno)" // Create the path
-        print("1 Path to decode \(path)")
+        //print("1 Path to decode \(path)")
         guard let url = URL(string: path) else {
             print("Bad Url")
             return
@@ -160,11 +172,11 @@ class QuizzesPageTableViewController: UITableViewController {
                             self.model.quizzesAll.append(contentsOf: quizzesPage.quizzes) // EL count celdas se hace sobre él
                             self.tableView.reloadData()
                             pageno += 1 // Tp the next page
-                            print("2 Pageno after saving \(pageno)")
+                            //print("2 Pageno after saving \(pageno)")
                             // Se tiene que meter dentro de la cola para que no haya condiciones de carrera
                             // Mete el que se ha calculado
-                            print("3 Pageno request \(pageno)")
-                            self.downloadQuizzes(pagenoIn: pageno)
+                            //print("3 Pageno request \(pageno)")
+                            self.download(pagenoIn: pageno)
                         }
                         
                     }
