@@ -55,7 +55,7 @@ class QuizzesPageTableViewController: UITableViewController {
         // print(model.authors ?? "")
         let quiz = model.quizzesAll[indexPath.row]
         cell.textLabel?.text = quiz.author?.username ?? "Anónimo"
-        print(quiz.author?.username)
+        // print(quiz.author?.username)
         cell.detailTextLabel?.text = quiz.question
         //cell.imageView?.image = UIImage(named: .icon)
         
@@ -136,7 +136,9 @@ class QuizzesPageTableViewController: UITableViewController {
     
     func downloadQuizzes(){
         //        let session = URLSession.shared // Create a session
-        let path = "\(model.apiURL)\(model.quizzesURL)?token=\(model.myToken)" // Create the path
+        var pageno : Int = 1// NUmber of the page
+        let path = "\(model.apiURL)\(model.quizzesURL)?token=\(model.myToken)&pageno=\(pageno)" // Create the path
+        print("\(path)")
         guard let url = URL(string: path) else {
             print("Bad Url")
             return
@@ -150,11 +152,18 @@ class QuizzesPageTableViewController: UITableViewController {
                 let decoder = JSONDecoder()
                 if let quizzesPage = try? decoder.decode(QuizPage.self, from: data) {
                     // print(authorsDown)
-                    DispatchQueue.main.async {
-                        print("2!!!!!!!!!!")
-                        self.model.quizzesAll.append(contentsOf: quizzesPage.quizzes)
-                        self.tableView.reloadData()
+                    // If there are more quizzes it gets them
+                    if quizzesPage.nextUrl != "" {
+                        DispatchQueue.main.async {
+                            //print("2!!!!!!!!!!")
+                            self.model.quizzesAll.append(contentsOf: quizzesPage.quizzes) // EL count celdas se hace sobre él
+                            self.tableView.reloadData()
+                            pageno += 1 // Tp the next page
+                            print("Pageno \(pageno)")
+                        }
+                        self.downloadQuizzes()
                     }
+                    print("Quit")
                 }
             }
         }
