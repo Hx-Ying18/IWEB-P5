@@ -129,7 +129,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
             if let data = try? Data(contentsOf: url){
                 // If bad, if gives a nil
                 print("!!!!!!!!!!")
-                let authorsSerialized = (try? JSONSerialization.jsonObject(with: data)) as? [Author]
+                let authorsSerialized = (try? JSONSerialization.jsonObject(with: data))
                 print(authorsSerialized)
                 if let authorsSerialized = (try? JSONSerialization.jsonObject(with: data)) as? [Author] {
                     print(authorsSerialized)
