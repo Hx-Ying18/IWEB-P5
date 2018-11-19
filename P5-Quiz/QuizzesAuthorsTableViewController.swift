@@ -127,12 +127,12 @@ class QuizzesAuthorsTableViewController: UITableViewController {
         DispatchQueue.global().async{
             if let data = try? Data(contentsOf: url){
                 // If bad, if gives a nil
-                print("!!!!!!!!!!")
+                // print("!!!!!!!!!!")
                 let decoder = JSONDecoder()
                 if let authorsDown = try? decoder.decode([Author].self, from: data) {
-                    print(authorsDown)
+                    // print(authorsDown)
                     DispatchQueue.main.async {
-                        print("2!!!!!!!!!!")
+                        // print("2!!!!!!!!!!")
                         self.model.authors = authorsDown
                         self.tableView.reloadData()
                     }

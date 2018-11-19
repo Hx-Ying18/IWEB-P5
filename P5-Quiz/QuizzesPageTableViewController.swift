@@ -43,7 +43,7 @@ class QuizzesPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return model.quizzesPage.count
+        return model.quizzesAll.count
         
     }
     
@@ -51,10 +51,11 @@ class QuizzesPageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath)
         
-        model.downloadQuizPage(pageno: 0)
+
         // print(model.authors ?? "")
-        let quiz = model.quizzesPage[indexPath.row]
+        let quiz = model.quizzesAll[indexPath.row]
         cell.textLabel?.text = quiz.author?.username ?? "Anónimo"
+        print(quiz.author?.username)
         cell.detailTextLabel?.text = quiz.question
         //cell.imageView?.image = UIImage(named: .icon)
         
@@ -110,7 +111,7 @@ class QuizzesPageTableViewController: UITableViewController {
             let pvc = segue.destination as! PlayViewController
             
             if let ip = tableView.indexPathForSelectedRow{
-                pvc.myQuiz = model.quizzesPage[ip.row]
+                pvc.myQuiz = model.quizzesAll[ip.row]
             }
         }
         else {}
@@ -121,9 +122,8 @@ class QuizzesPageTableViewController: UITableViewController {
             self.refreshButton.isEnabled = false
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
         }
-        model.downloadQuizPage(pageno: 0)
+        downloadQuizzes()
         DispatchQueue.main.async {
-            self.tableView.reloadData()
             self.refreshButton.isEnabled = true
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
@@ -132,5 +132,31 @@ class QuizzesPageTableViewController: UITableViewController {
 
     @IBAction func refreshTap(_ sender: UIBarButtonItem) {
         updateQuizPage()
+    }
+    
+    func downloadQuizzes(){
+        //        let session = URLSession.shared // Create a session
+        let path = "\(model.apiURL)\(model.quizzesURL)?token=\(model.myToken)" // Create the path
+        guard let url = URL(string: path) else {
+            print("Bad Url")
+            return
+            
+        } // Unwrap the url
+        
+        DispatchQueue.global().async{
+            if let data = try? Data(contentsOf: url){
+                // If bad, if gives a nil
+                // print("!!!!!!!!!!")
+                let decoder = JSONDecoder()
+                if let quizzesDown = try? decoder.decode([Quiz].self, from: data) {
+                    // print(authorsDown)
+                    DispatchQueue.main.async {
+                        print("2!!!!!!!!!!")
+                        self.model.quizzesAll = quizzesDown
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
 }
