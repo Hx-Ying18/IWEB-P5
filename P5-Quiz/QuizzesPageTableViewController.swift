@@ -148,11 +148,11 @@ class QuizzesPageTableViewController: UITableViewController {
                 // If bad, if gives a nil
                 // print("!!!!!!!!!!")
                 let decoder = JSONDecoder()
-                if let quizzesDown = try? decoder.decode([Quiz].self, from: data) {
+                if let quizzesPage = try? decoder.decode(QuizPage.self, from: data) {
                     // print(authorsDown)
                     DispatchQueue.main.async {
                         print("2!!!!!!!!!!")
-                        self.model.quizzesAll = quizzesDown
+                        self.model.quizzesAll.append(contentsOf: quizzesPage.quizzes)
                         self.tableView.reloadData()
                     }
                 }

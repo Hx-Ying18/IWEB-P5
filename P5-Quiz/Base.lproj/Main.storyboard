@@ -159,61 +159,11 @@
                     <connections>
                         <segue destination="xL9-j5-SpB" kind="relationship" relationship="viewControllers" id="Jge-fR-h99"/>
                         <segue destination="Bep-ic-95U" kind="relationship" relationship="viewControllers" id="pIF-uf-Naf"/>
-                        <segue destination="GHt-l2-VeN" kind="relationship" relationship="viewControllers" id="xwd-aY-Lvp"/>
-                        <segue destination="vTx-bi-HDD" kind="relationship" relationship="viewControllers" id="bxs-bW-fOE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXk-mC-z8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1542" y="529"/>
-        </scene>
-        <!--10-->
-        <scene sceneID="Dya-mM-foY">
-            <objects>
-                <tableViewController id="GHt-l2-VeN" userLabel="10" customClass="Quizzes10TableViewController" customModule="P5_Quiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fSq-mc-6T5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Quiz Cell" textLabel="vcu-gx-jAJ" detailTextLabel="Qhs-tW-OdM" style="IBUITableViewCellStyleSubtitle" id="knt-Aq-7iz">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="knt-Aq-7iz" id="GhW-tw-73S">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vcu-gx-jAJ">
-                                            <rect key="frame" x="16" y="3" width="25" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qhs-tW-OdM">
-                                            <rect key="frame" x="16" y="19.5" width="59" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="GHt-l2-VeN" id="GlK-aK-K87"/>
-                            <outlet property="delegate" destination="GHt-l2-VeN" id="ALt-dj-hvt"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="10" id="EPd-1d-oEF"/>
-                    <navigationItem key="navigationItem" title="Title" id="Oyc-ap-SED">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="WJd-Sk-t0L"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Geg-f7-nkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-86" y="940"/>
         </scene>
         <!--Page-->
         <scene sceneID="V94-xe-0dp">
@@ -271,52 +221,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wzt-H7-BjN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1090" y="203"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="LNk-9Z-TD7">
-            <objects>
-                <tableViewController id="vTx-bi-HDD" customClass="QuizzesAllTableViewController" customModule="P5_Quiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mso-EF-sgP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="rzf-2G-nYs" detailTextLabel="PSm-lv-grV" style="IBUITableViewCellStyleSubtitle" id="ARQ-sB-LC6">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ARQ-sB-LC6" id="3qy-Pv-5Gm">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rzf-2G-nYs">
-                                            <rect key="frame" x="16" y="3" width="25" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PSm-lv-grV">
-                                            <rect key="frame" x="16" y="19.5" width="59" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="vTx-bi-HDD" id="gYa-Dv-eMg"/>
-                            <outlet property="delegate" destination="vTx-bi-HDD" id="Zjf-H6-FeT"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Todos" id="Deb-X8-3jW"/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="DtF-I2-JAX"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YnK-CC-bH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-970" y="1254"/>
         </scene>
         <!--Página-->
         <scene sceneID="PQP-df-Zxp">

@@ -17,9 +17,7 @@
 		3A6033EA218DB31E00D28AF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6033E9218DB31E00D28AF7 /* Assets.xcassets */; };
 		3A6033ED218DB31E00D28AF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6033EB218DB31E00D28AF7 /* LaunchScreen.storyboard */; };
 		3A603419218E373600D28AF7 /* QuizzesAuthorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A603418218E373600D28AF7 /* QuizzesAuthorsTableViewController.swift */; };
-		3A86DABE218F5CAA00F9F1AF /* QuizzesAllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A86DABD218F5CAA00F9F1AF /* QuizzesAllTableViewController.swift */; };
 		3A86DAC0218F5D7000F9F1AF /* QuizzesPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A86DABF218F5D7000F9F1AF /* QuizzesPageTableViewController.swift */; };
-		3A86DAC2218F5D8000F9F1AF /* Quizzes10TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A86DAC1218F5D8000F9F1AF /* Quizzes10TableViewController.swift */; };
 		3A86DAC4218F5F7900F9F1AF /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A86DAC3218F5F7900F9F1AF /* Quiz.swift */; };
 		3A86DAC6218F6DEF00F9F1AF /* QuizPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A86DAC5218F6DEF00F9F1AF /* QuizPage.swift */; };
 /* End PBXBuildFile section */
@@ -56,9 +54,7 @@
 		3A6033F3218DB31E00D28AF7 /* P5-QuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "P5-QuizTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6033FE218DB31E00D28AF7 /* P5-QuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "P5-QuizUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A603418218E373600D28AF7 /* QuizzesAuthorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesAuthorsTableViewController.swift; sourceTree = "<group>"; };
-		3A86DABD218F5CAA00F9F1AF /* QuizzesAllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesAllTableViewController.swift; sourceTree = "<group>"; };
 		3A86DABF218F5D7000F9F1AF /* QuizzesPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesPageTableViewController.swift; sourceTree = "<group>"; };
-		3A86DAC1218F5D8000F9F1AF /* Quizzes10TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quizzes10TableViewController.swift; sourceTree = "<group>"; };
 		3A86DAC3218F5F7900F9F1AF /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		3A86DAC5218F6DEF00F9F1AF /* QuizPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,9 +120,7 @@
 				3A6033E2218DB31E00D28AF7 /* AppDelegate.swift */,
 				3A6033E4218DB31E00D28AF7 /* ViewController.swift */,
 				3A603418218E373600D28AF7 /* QuizzesAuthorsTableViewController.swift */,
-				3A86DABD218F5CAA00F9F1AF /* QuizzesAllTableViewController.swift */,
 				3A86DABF218F5D7000F9F1AF /* QuizzesPageTableViewController.swift */,
-				3A86DAC1218F5D8000F9F1AF /* Quizzes10TableViewController.swift */,
 				3A0B7B9D219099A200FD38E3 /* TipsTableViewController.swift */,
 				3A0B7B9B2190998500FD38E3 /* PlayViewController.swift */,
 				3A6033E6218DB31E00D28AF7 /* Main.storyboard */,
@@ -271,13 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A86DAC2218F5D8000F9F1AF /* Quizzes10TableViewController.swift in Sources */,
 				3A0B0245218F2C8F00BB8E61 /* Model.swift in Sources */,
 				3A86DAC0218F5D7000F9F1AF /* QuizzesPageTableViewController.swift in Sources */,
 				3A6033E5218DB31E00D28AF7 /* ViewController.swift in Sources */,
 				3A0B7B9C2190998500FD38E3 /* PlayViewController.swift in Sources */,
 				3A603419218E373600D28AF7 /* QuizzesAuthorsTableViewController.swift in Sources */,
-				3A86DABE218F5CAA00F9F1AF /* QuizzesAllTableViewController.swift in Sources */,
 				3A0B7B9E219099A200FD38E3 /* TipsTableViewController.swift in Sources */,
 				3A6033E3218DB31E00D28AF7 /* AppDelegate.swift in Sources */,
 				3A0B0247218F2E4E00BB8E61 /* Author.swift in Sources */,
