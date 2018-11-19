@@ -122,7 +122,7 @@ class QuizzesPageTableViewController: UITableViewController {
             self.refreshButton.isEnabled = false
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
         }
-        downloadQuizzes()
+        downloadQuizzes(pagenoIn: 1)
         DispatchQueue.main.async {
             self.refreshButton.isEnabled = true
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -134,11 +134,12 @@ class QuizzesPageTableViewController: UITableViewController {
         updateQuizPage()
     }
     
-    func downloadQuizzes(){
+    func downloadQuizzes(pagenoIn : Int){
+        
         //        let session = URLSession.shared // Create a session
-        var pageno : Int = 1// NUmber of the page
+        var pageno : Int = pagenoIn// NUmber of the page
         let path = "\(model.apiURL)\(model.quizzesURL)?token=\(model.myToken)&pageno=\(pageno)" // Create the path
-        print("\(path)")
+        print("1 Path to decode \(path)")
         guard let url = URL(string: path) else {
             print("Bad Url")
             return
@@ -159,9 +160,13 @@ class QuizzesPageTableViewController: UITableViewController {
                             self.model.quizzesAll.append(contentsOf: quizzesPage.quizzes) // EL count celdas se hace sobre él
                             self.tableView.reloadData()
                             pageno += 1 // Tp the next page
-                            print("Pageno \(pageno)")
+                            print("2 Pageno after saving \(pageno)")
+                            // Se tiene que meter dentro de la cola para que no haya condiciones de carrera
+                            // Mete el que se ha calculado
+                            print("3 Pageno request \(pageno)")
+                            self.downloadQuizzes(pagenoIn: pageno)
                         }
-                        self.downloadQuizzes()
+                        
                     }
                     print("Quit")
                 }
