@@ -113,5 +113,67 @@ class QuizzesAuthorsTableViewController: UITableViewController {
 //            self.tableView.reloadData()
 //        }
 //    }
+    // Stores a new downloaded value author
+    func downloadAuthors() {
+        
+        
+        //        let session = URLSession.shared // Create a session
+        let path = "\(model.apiURL)\(model.usersURL)?token=\(model.myToken)" // Create the path
+        guard let url = URL(string: path) else {
+            print("Bad Url")
+            return
+            
+        } // Unwrap the url
+        
+        DispatchQueue.global().async{
+            if let data = try? Data(contentsOf: url){
+                // If bad, if gives a nil
+                print("!!!!!!!!!!")
+                let decoder = JSONDecoder()
+                if let authorsDown = try? decoder.decode([Author].self, from:data) {
+                    print(authorsDown)
+                    DispatchQueue.main.async {
+                        print("2!!!!!!!!!!")
+                        self.model.authors = authorsDown
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    // As download blocks, it is done in anotehr thread.
+    //        DispatchQueue.global().async{
+    //            if let data = try? Data(contentsOf: url){
+    //                // If bad, if gives a nil
+    //
+    //                if let authorsSerialized = (try? JSONSerialization.jsonObject(with: data)) as? [Author] {
+    //                    DispatchQueue.main.async {
+    //                        self.model.authors = authorsSerialized
+    //                        self.tableView.reloadData()
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+    //        let task = session.dataTask(with: url){ (data: Data?,
+    //            response: URLResponse?,
+    //            error: Error?) in
+    //            if error == nil && (response as! HTTPURLResponse).statusCode == 200 { // If there are no errors in the connection
+    //
+    //                guard let data = data else { return } //unwrap the value data
+    //                //                let dataAsString = String(data: data,
+    //                //                                                   encoding: .utf8 )
+    //                //                print(dataAsString)
+    //
+    //                do{
+    //                    self.authors = try JSONDecoder().decode([Author].self, from: data)
+    //                    // print(self.authors)
+    //                }catch let jsonErr {
+    //                    print("Error serializing json", jsonErr)
+    //                }
+    //            } else { print("Error downloading") }
+    //
+    //        }
 
 }
