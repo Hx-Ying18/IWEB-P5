@@ -236,6 +236,7 @@
                             <outlet property="delegate" destination="Xwk-oo-9FJ" id="Khh-zj-pj1"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="OqW-T9-Z7R">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="IL5-AG-9BM">
                             <connections>
@@ -243,6 +244,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="refreshButton" destination="IL5-AG-9BM" id="aF1-7G-hNh"/>
                     </connections>
