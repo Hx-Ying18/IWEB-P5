@@ -25,3 +25,9 @@ struct Attachment : Codable {
     let mime : String
     let url : String
 }
+
+struct Answer : Codable {
+    let quizId: Int
+    let answer : String
+    let result : Bool
+}

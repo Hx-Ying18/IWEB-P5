@@ -10,6 +10,8 @@ import UIKit
 
 class PlayViewController: UIViewController {
 
+    var model = Model()
+    
     @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet weak var answerText: UITextField!
@@ -61,17 +63,47 @@ class PlayViewController: UIViewController {
     // do the call, and present an alert
     func play(){
         
-        if true {
-            print("alert")
-            let alert = UIAlertController(title: "Fallaste", message: "Más bien pensaba en otra respuesta. . .", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
-            present(alert, animated: true)
-        } else {
+        var answerString = answerText?.text
+//        if (answerText.text == "Optional("")") {
+//            answerString = ""
+//        }
+        print(answerString)
+        let urls = "\(model.apiURL)\(model.quizzesURL)/1/check?answer=\(answerString)&token=\(model.myToken)" // Create the path
+        print(urls)
+        //print("1 Path to decode \(path)")
+        guard let url = URL(string: urls) else {
+            print("Bad Url")
+            return
+            
+        } // Unwrap the url
         
-        let alert2 = UIAlertController(title: "Correcto", message: "Eres un campeón", preferredStyle: .alert)
-        alert2.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
-        present(alert2, animated: true)
+        DispatchQueue.global().async{
+            if let data = try? Data(contentsOf: url){
+                // If bad, if gives a nil
+                // print("!!!!!!!!!!")
+                let decoder = JSONDecoder()
+                if let answer = try? decoder.decode(Answer.self, from: data) {
+                    // print(authorsDown)
+                    // If there are more quizzes it gets them
+                    DispatchQueue.main.async {
+                        if (!answer.result) {
+                            print("alert")
+                            let alert = UIAlertController(title: "Fallaste", message: "Más bien pensaba en otra respuesta. . .", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+                            self.present(alert, animated: true)
+                        } else {
+                            
+                            let alert2 = UIAlertController(title: "Correcto", message: "Eres un campeón", preferredStyle: .alert)
+                            alert2.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+                            self.present(alert2, animated: true)
+                        }
+                    }
+                }
+                // print("Quit")
+            }
         }
     }
+        
 
-}
+    }
+
