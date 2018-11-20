@@ -48,24 +48,27 @@ class QuizzesPageTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath) as! QuizTableViewCell
         
         // print(model.authors ?? "")
         let quiz = model.quizzesAll[indexPath.row]
-        cell.textLabel?.text = quiz.author?.username ?? "Anónimo"
+        cell.authorLabel?.text = quiz.author?.username ?? "Anónimo"
         // print(quiz.author?.username)
-        cell.detailTextLabel?.text = quiz.question
+        cell.questionLabel?.text = quiz.question
         //cell.imageView?.image = UIImage(named: .icon)
         
-        // Only if quiiz have attachment it can be downloaded
+        // Only if quiz have attachment it can be downloaded
         if let imgUrl = model.quizzesAll[indexPath.row].attachment?.url {
             if let img = imagesCache[imgUrl] {
-                cell.imageView?.image = img
+                cell.quizImage?.image = img
             } else {
-                cell.imageView?.image = UIImage(named: "none")
+                cell.quizImage?.image = UIImage(named: "none")
                 download(imgUrl, for: indexPath)
             }
         }
+        
+        cell.quizStar?.image = quiz.favourite ? UIImage(named: "starOn") : UIImage(named: "starOff")
+        
         return cell
     }
     /*

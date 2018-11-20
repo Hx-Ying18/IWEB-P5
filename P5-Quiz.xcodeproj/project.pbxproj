@@ -11,6 +11,7 @@
 		3A0B0247218F2E4E00BB8E61 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B0246218F2E4E00BB8E61 /* Author.swift */; };
 		3A0B7B9C2190998500FD38E3 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B7B9B2190998500FD38E3 /* PlayViewController.swift */; };
 		3A0B7B9E219099A200FD38E3 /* TipsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B7B9D219099A200FD38E3 /* TipsTableViewController.swift */; };
+		3A5614AB21A477F3001F921C /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5614AA21A477F3001F921C /* QuizTableViewCell.swift */; };
 		3A6033E3218DB31E00D28AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6033E2218DB31E00D28AF7 /* AppDelegate.swift */; };
 		3A6033E5218DB31E00D28AF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6033E4218DB31E00D28AF7 /* ViewController.swift */; };
 		3A6033E8218DB31E00D28AF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6033E6218DB31E00D28AF7 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		3A0B0246218F2E4E00BB8E61 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		3A0B7B9B2190998500FD38E3 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		3A0B7B9D219099A200FD38E3 /* TipsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsTableViewController.swift; sourceTree = "<group>"; };
+		3A5614AA21A477F3001F921C /* QuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
 		3A6033DF218DB31E00D28AF7 /* P5-Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P5-Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6033E2218DB31E00D28AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A6033E4218DB31E00D28AF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				3A6033E4218DB31E00D28AF7 /* ViewController.swift */,
 				3A603418218E373600D28AF7 /* QuizzesAuthorsTableViewController.swift */,
 				3A86DABF218F5D7000F9F1AF /* QuizzesPageTableViewController.swift */,
+				3A5614AA21A477F3001F921C /* QuizTableViewCell.swift */,
 				3A0B7B9D219099A200FD38E3 /* TipsTableViewController.swift */,
 				3A0B7B9B2190998500FD38E3 /* PlayViewController.swift */,
 				3A6033E6218DB31E00D28AF7 /* Main.storyboard */,
@@ -271,6 +274,7 @@
 				3A0B7B9C2190998500FD38E3 /* PlayViewController.swift in Sources */,
 				3A603419218E373600D28AF7 /* QuizzesAuthorsTableViewController.swift in Sources */,
 				3A0B7B9E219099A200FD38E3 /* TipsTableViewController.swift in Sources */,
+				3A5614AB21A477F3001F921C /* QuizTableViewCell.swift in Sources */,
 				3A6033E3218DB31E00D28AF7 /* AppDelegate.swift in Sources */,
 				3A0B0247218F2E4E00BB8E61 /* Author.swift in Sources */,
 				3A86DAC4218F5F7900F9F1AF /* Quiz.swift in Sources */,

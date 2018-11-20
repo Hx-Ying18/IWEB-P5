@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Quiz Cell" rowHeight="129" id="RKV-YH-g7j">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Quiz Cell" rowHeight="129" id="RKV-YH-g7j" customClass="QuizTableViewCell" customModule="P5_Quiz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="129"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RKV-YH-g7j" id="ntP-So-wRx">
@@ -223,6 +223,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="authorLabel" destination="9QS-Xk-34P" id="LQg-6r-t5I"/>
+                                    <outlet property="questionLabel" destination="eQt-Cf-KxQ" id="Ori-TI-J5Y"/>
+                                    <outlet property="quizImage" destination="azO-4V-x67" id="BnQ-8s-dcy"/>
+                                    <outlet property="quizStar" destination="qDW-v1-PDz" id="wRj-Bo-904"/>
                                     <segue destination="y9G-K3-E9w" kind="show" identifier="Lets Play" id="Z05-gM-d0g"/>
                                 </connections>
                             </tableViewCell>
