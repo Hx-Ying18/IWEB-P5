@@ -62,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnI-br-0FM">
-                                <rect key="frame" x="166" y="176" width="42" height="21"/>
+                                <rect key="frame" x="28" y="176" width="312" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
@@ -79,13 +79,14 @@
                                 <rect key="frame" x="67" y="319" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comprobar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GY-p9-g85">
-                                <rect key="frame" x="137" y="522" width="87" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlZ-6d-HTV">
+                                <rect key="frame" x="127" y="510" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Comprobar"/>
+                                <connections>
+                                    <action selector="playOnTapped:" destination="y9G-K3-E9w" eventType="touchUpInside" id="RiC-4M-KfN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.71634783251416168" green="1" blue="0.4925077041356366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="gXV-UO-3q0"/>
@@ -101,14 +102,13 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="answerText" destination="z6D-Aj-g0Q" id="tkG-mS-dK7"/>
-                        <outlet property="checkButton" destination="4GY-p9-g85" id="MMO-0B-7Nk"/>
                         <outlet property="questionLabel" destination="VnI-br-0FM" id="kNm-26-fRI"/>
                         <outlet property="quizImage" destination="uBv-GG-WCX" id="agT-1u-VWk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2L-gq-v6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="203"/>
+            <point key="canvasLocation" x="1541.5999999999999" y="202.84857571214394"/>
         </scene>
         <!--Tips Table View Controller-->
         <scene sceneID="XMH-zE-Q1K">

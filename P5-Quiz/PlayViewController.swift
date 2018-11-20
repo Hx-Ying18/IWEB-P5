@@ -29,6 +29,10 @@ class PlayViewController: UIViewController {
         
     }
 
+    @IBAction func playOnTapped(_ sender: UIButton) {
+        play()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,5 +56,22 @@ class PlayViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // Get the value in the text field get teh data contentes,
+    // do the call, and present an alert
+    func play(){
+        
+        if true {
+            print("alert")
+            let alert = UIAlertController(title: "Fallaste", message: "Más bien pensaba en otra respuesta. . .", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+            present(alert, animated: true)
+        } else {
+        
+        let alert2 = UIAlertController(title: "Correcto", message: "Eres un campeón", preferredStyle: .alert)
+        alert2.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+        present(alert2, animated: true)
+        }
+    }
 
 }
