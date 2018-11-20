@@ -91,7 +91,7 @@
                         <viewLayoutGuide key="safeArea" id="gXV-UO-3q0"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="159-FE-WIb">
+                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="always" id="159-FE-WIb">
                         <barButtonItem key="rightBarButtonItem" title="Pistas" id="uo9-bU-Sur" userLabel="Pistas">
                             <connections>
                                 <segue destination="79x-MV-a2g" kind="show" identifier="Show Tips" id="NdK-T4-0F5"/>
