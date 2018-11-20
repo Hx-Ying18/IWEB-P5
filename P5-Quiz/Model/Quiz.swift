@@ -15,11 +15,13 @@ struct Quiz: Decodable {
     let id: Int
     let question: String
     let author: Author?
-    struct Attachment : Codable {
-        let filename: String
-        let mime : String
-        let url : String
-    }
+    let attachment: Attachment?
     let favourite: Bool
     let tips: [String]?
+}
+
+struct Attachment : Codable {
+    let filename: String
+    let mime : String
+    let url : String
 }

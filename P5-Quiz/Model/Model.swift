@@ -19,7 +19,6 @@ class Model{
     var authors = [Author]()
     var quizzesPage = [Quiz]()
     var quizzesAll = [Quiz]()
-    
 
     
     func downloadQuizPage(pageno : Int) {

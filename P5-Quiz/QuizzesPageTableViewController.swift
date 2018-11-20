@@ -11,6 +11,7 @@ import UIKit
 class QuizzesPageTableViewController: UITableViewController {
 
     var model = Model()
+    var imagesCache = [String:UIImage]()
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
@@ -44,14 +45,11 @@ class QuizzesPageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return model.quizzesAll.count
-        
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath)
         
-
         // print(model.authors ?? "")
         let quiz = model.quizzesAll[indexPath.row]
         cell.textLabel?.text = quiz.author?.username ?? "Anónimo"
@@ -59,6 +57,15 @@ class QuizzesPageTableViewController: UITableViewController {
         cell.detailTextLabel?.text = quiz.question
         //cell.imageView?.image = UIImage(named: .icon)
         
+        // Only if quiiz have attachment it can be downloaded
+        if let imgUrl = model.quizzesAll[indexPath.row].attachment?.url {
+            if let img = imagesCache[imgUrl] {
+                cell.imageView?.image = img
+            } else {
+                cell.imageView?.image = UIImage(named: "none")
+                download(imgUrl, for: indexPath)
+            }
+        }
         return cell
     }
     /*
@@ -180,9 +187,31 @@ class QuizzesPageTableViewController: UITableViewController {
                         }
                         
                     }
-                    print("Quit")
+                    // print("Quit")
                 }
             }
         }
     }
+    
+    // Download an image
+    func download(_ urls: String, for indexPath: IndexPath){
+        
+        DispatchQueue.global().async{
+            print("Downloading")
+            if let url = URL(string: urls),
+                let data = try? Data(contentsOf: url),
+                let img = UIImage(data: data){
+                DispatchQueue.main.async {
+                    self.imagesCache[urls] = img
+                    // Not to reload all the data only the specific rows.
+                    self.tableView.reloadRows(at: [indexPath], with: .fade)
+                }
+            } else{
+                print("Bad downloading")
+            }
+            
+        }
+    }
+    
+    
 }
