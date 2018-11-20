@@ -92,9 +92,9 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="159-FE-WIb">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Pistas" id="A46-kw-p3G">
+                        <barButtonItem key="rightBarButtonItem" title="Pistas" id="uo9-bU-Sur" userLabel="Pistas">
                             <connections>
-                                <segue destination="79x-MV-a2g" kind="show" identifier="Show Tips" id="LUx-MB-NPh"/>
+                                <segue destination="79x-MV-a2g" kind="show" identifier="Show Tips" id="NdK-T4-0F5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -237,7 +237,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="OqW-T9-Z7R">
+                    <navigationItem key="navigationItem" title="Todos Quizzes" id="OqW-T9-Z7R">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="IL5-AG-9BM">
                             <connections>
                                 <action selector="refreshTap:" destination="Xwk-oo-9FJ" id="Kw5-KK-S7i"/>
