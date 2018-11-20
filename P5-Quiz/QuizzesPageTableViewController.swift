@@ -67,7 +67,7 @@ class QuizzesPageTableViewController: UITableViewController {
             }
         }
         
-        cell.quizStar?.image = quiz.favourite ? UIImage(named: "starOn") : UIImage(named: "starOff")
+//        cell.quizStar?.image = quiz.favourite ? UIImage(named: "starOn") : UIImage(named: "starOff")
         
         return cell
     }
