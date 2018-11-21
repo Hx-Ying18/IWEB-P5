@@ -68,6 +68,10 @@ class QuizzesPageTableViewController: UITableViewController {
             }
         }
         
+        let star = quiz.favourite ? UIImage(named: "starOn") : UIImage(named: "starOff")
+        cell.starButton.setImage(star, for: .normal)
+        
+        
 //        cell.quizStar?.image = quiz.favourite ? UIImage(named: "starOn") : UIImage(named: "starOff")
         
         return cell
