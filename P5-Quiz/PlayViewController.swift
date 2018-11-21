@@ -60,14 +60,21 @@ class PlayViewController: UIViewController {
     // do the call, and present an alert
     func play(){
         
-        let answerString = answerText.text
+        guard let answerString = answerText.text else{
+            let alert = UIAlertController(title: "Error", message: "NO introdujiste respuesta. . .", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+            self.present(alert, animated: true)
+            return
+        }
 //        if (answerText.text == "Optional("")") {
 //            answerString = ""
 //        }
-        let replaced = answerString?.replacingOccurrences(of: " ", with: "+")
+        let replaced = answerString.replacingOccurrences(of: " ", with: "+")
         
         print(replaced)
-        let urls = "\(model.apiURL)\(model.quizzesURL)/1/check?answer=\(replaced!)&token=\(model.myToken)" // Create the path
+        let base = "\(model.apiURL)\(model.quizzesURL)/1/check?answer="
+        // Create the path
+        let urls = base + replaced + "&token=\(model.myToken)"
         print(urls)
         //print("1 Path to decode \(path)")
         guard let url = URL(string: urls) else {

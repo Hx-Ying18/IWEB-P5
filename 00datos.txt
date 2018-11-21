@@ -1,0 +1,7 @@
+g831
+
+Hengxuan Ying
+Adrián Blázquez León
+
+	Nótese, que además de la funcionalidad requerida: los textos se adaptan al tamaño que pueda configurar el usuario en el menú de accesibilidad de su iPhone y se representa en una pestaña los autores. 
+
