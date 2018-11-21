@@ -71,11 +71,11 @@ class PlayViewController: UIViewController {
 //        }
         let replaced = answerString.replacingOccurrences(of: " ", with: "+")
         
-        print(replaced)
+        // print(replaced)
         let base = "\(model.apiURL)\(model.quizzesURL)/1/check?answer="
         // Create the path
         let urls = base + replaced + "&token=\(model.myToken)"
-        print(urls)
+        // print(urls)
         //print("1 Path to decode \(path)")
         guard let url = URL(string: urls) else {
             print("Bad Url")
@@ -92,13 +92,14 @@ class PlayViewController: UIViewController {
                     // print(authorsDown)
                     // If there are more quizzes it gets them
                     DispatchQueue.main.async {
+                        print(replaced)
+                        print(answer.result)
                         if (!answer.result) {
                             print("alert")
                             let alert = UIAlertController(title: "Fallaste", message: "Más bien pensaba en otra respuesta. . .", preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
                             self.present(alert, animated: true)
                         } else {
-                            
                             let alert2 = UIAlertController(title: "Correcto", message: "Eres un campeón", preferredStyle: .alert)
                             alert2.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
                             self.present(alert2, animated: true)
