@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -184,31 +183,31 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1mF-Rt-hK4">
-                                            <rect key="frame" x="53" y="28" width="200" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="257" height="128.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IWH-yw-Kum">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="128.5" height="128.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="azO-4V-x67">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="128.5" height="128.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="azO-4V-x67" secondAttribute="height" multiplier="1:1" id="acU-TD-HgV"/>
-                                                                <constraint firstAttribute="height" constant="100" id="vLM-7c-FVt"/>
+                                                                <constraint firstAttribute="width" secondItem="azO-4V-x67" secondAttribute="height" multiplier="1:1" id="0Sh-Cb-bJS"/>
+                                                                <constraint firstAttribute="height" constant="128" id="qaj-HA-Ay2"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fgg-xg-ZXm">
-                                                    <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                                    <rect key="frame" x="128.5" y="0.0" width="128.5" height="128.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QS-Xk-34P">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="128.5" height="64.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQt-Cf-KxQ">
-                                                            <rect key="frame" x="0.0" y="50" width="100" height="50"/>
+                                                            <rect key="frame" x="0.0" y="64.5" width="128.5" height="64"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -217,8 +216,9 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcN-va-9H5" userLabel="starButton">
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcN-va-9H5" userLabel="starButton">
                                             <rect key="frame" x="253" y="11" width="57" height="59"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button" image="starOff"/>
                                             <connections>
                                                 <action selector="favTap:" destination="RKV-YH-g7j" eventType="touchUpInside" id="ELJ-wf-EAc"/>
@@ -226,10 +226,9 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="1mF-Rt-hK4" secondAttribute="trailing" constant="80" id="B1c-Xm-DKT"/>
-                                        <constraint firstItem="WcN-va-9H5" firstAttribute="top" secondItem="ntP-So-wRx" secondAttribute="topMargin" id="S56-nq-814"/>
-                                        <constraint firstItem="WcN-va-9H5" firstAttribute="trailing" secondItem="ntP-So-wRx" secondAttribute="trailingMargin" constant="-20" id="YF4-qb-DhD"/>
-                                        <constraint firstAttribute="bottom" secondItem="1mF-Rt-hK4" secondAttribute="bottom" constant="1" id="n0X-1R-WEx"/>
+                                        <constraint firstAttribute="bottom" secondItem="1mF-Rt-hK4" secondAttribute="bottom" id="UXS-gb-jOa"/>
+                                        <constraint firstItem="1mF-Rt-hK4" firstAttribute="top" secondItem="ntP-So-wRx" secondAttribute="top" id="Y7y-Rc-k22"/>
+                                        <constraint firstItem="1mF-Rt-hK4" firstAttribute="leading" secondItem="ntP-So-wRx" secondAttribute="leading" id="alZ-Ss-mZA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
