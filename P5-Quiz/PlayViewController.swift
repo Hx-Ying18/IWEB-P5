@@ -7,18 +7,15 @@
 //
 
 import UIKit
+import Foundation
 
 class PlayViewController: UIViewController {
 
     var model = Model()
     
     @IBOutlet weak var questionLabel: UILabel!
-    
     @IBOutlet weak var answerText: UITextField!
-    
     @IBOutlet weak var quizImage: UIImageView!
-    
-    @IBOutlet weak var checkButton: UILabel!
     
     var myQuiz : Quiz? = nil
     
@@ -63,12 +60,14 @@ class PlayViewController: UIViewController {
     // do the call, and present an alert
     func play(){
         
-        var answerString = answerText?.text
+        let answerString = answerText.text
 //        if (answerText.text == "Optional("")") {
 //            answerString = ""
 //        }
-        print(answerString)
-        let urls = "\(model.apiURL)\(model.quizzesURL)/1/check?answer=\(answerString)&token=\(model.myToken)" // Create the path
+        let replaced = answerString?.replacingOccurrences(of: " ", with: "+")
+        
+        print(replaced)
+        let urls = "\(model.apiURL)\(model.quizzesURL)/1/check?answer=\(replaced!)&token=\(model.myToken)" // Create the path
         print(urls)
         //print("1 Path to decode \(path)")
         guard let url = URL(string: urls) else {
