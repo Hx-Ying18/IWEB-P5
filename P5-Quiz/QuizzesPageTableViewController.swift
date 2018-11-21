@@ -14,6 +14,7 @@ class QuizzesPageTableViewController: UITableViewController {
     var imagesCache = [String:UIImage]()
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

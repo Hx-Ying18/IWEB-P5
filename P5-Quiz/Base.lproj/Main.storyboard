@@ -217,9 +217,18 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcN-va-9H5" userLabel="starButton">
+                                            <rect key="frame" x="253" y="11" width="57" height="59"/>
+                                            <state key="normal" title="Button" image="starOff"/>
+                                            <connections>
+                                                <action selector="favTap:" destination="RKV-YH-g7j" eventType="touchUpInside" id="ELJ-wf-EAc"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="1mF-Rt-hK4" secondAttribute="trailing" constant="80" id="B1c-Xm-DKT"/>
+                                        <constraint firstItem="WcN-va-9H5" firstAttribute="top" secondItem="ntP-So-wRx" secondAttribute="topMargin" id="S56-nq-814"/>
+                                        <constraint firstItem="WcN-va-9H5" firstAttribute="trailing" secondItem="ntP-So-wRx" secondAttribute="trailingMargin" constant="-20" id="YF4-qb-DhD"/>
                                         <constraint firstAttribute="bottom" secondItem="1mF-Rt-hK4" secondAttribute="bottom" constant="1" id="n0X-1R-WEx"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -227,6 +236,7 @@
                                     <outlet property="authorLabel" destination="9QS-Xk-34P" id="LQg-6r-t5I"/>
                                     <outlet property="questionLabel" destination="eQt-Cf-KxQ" id="Ori-TI-J5Y"/>
                                     <outlet property="quizImage" destination="azO-4V-x67" id="BnQ-8s-dcy"/>
+                                    <outlet property="starButton" destination="WcN-va-9H5" id="iup-Sm-D9H"/>
                                     <segue destination="y9G-K3-E9w" kind="show" identifier="Lets Play" id="Z05-gM-d0g"/>
                                 </connections>
                             </tableViewCell>
@@ -273,4 +283,7 @@
             <point key="canvasLocation" x="-88" y="203.29835082458771"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="starOff" width="1000" height="952"/>
+    </resources>
 </document>
