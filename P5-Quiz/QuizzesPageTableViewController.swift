@@ -11,7 +11,7 @@ import UIKit
 class QuizzesPageTableViewController: UITableViewController {
 
     var model = Model()
-    var imagesCache = [String:UIImage]()
+    
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
 
@@ -60,7 +60,7 @@ class QuizzesPageTableViewController: UITableViewController {
         
         // Only if quiz have attachment it can be downloaded
         if let imgUrl = model.quizzesAll[indexPath.row].attachment?.url {
-            if let img = imagesCache[imgUrl] {
+            if let img = model.imagesCache[imgUrl] {
                 cell.quizImage?.image = img
             } else {
                 cell.quizImage?.image = UIImage(named: "none")
@@ -127,6 +127,7 @@ class QuizzesPageTableViewController: UITableViewController {
             
             if let ip = tableView.indexPathForSelectedRow{
                 pvc.myQuiz = model.quizzesAll[ip.row]
+                pvc.rowQuizzes = ip.row
             }
         }
         else {}
@@ -210,7 +211,7 @@ class QuizzesPageTableViewController: UITableViewController {
                 let data = try? Data(contentsOf: url),
                 let img = UIImage(data: data){
                 DispatchQueue.main.async {
-                    self.imagesCache[urls] = img
+                    self.model.imagesCache[urls] = img
                     // Not to reload all the data only the specific rows.
                     self.tableView.reloadRows(at: [indexPath], with: .fade)
                 }
@@ -220,6 +221,4 @@ class QuizzesPageTableViewController: UITableViewController {
             
         }
     }
-    
-    
 }

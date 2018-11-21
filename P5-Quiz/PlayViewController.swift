@@ -18,16 +18,46 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var quizImage: UIImageView!
     
     var myQuiz : Quiz? = nil
+    var rowQuizzes : Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "Responda:"
-        questionLabel.text = myQuiz?.question
-        
+        if (myQuiz != nil) {
+            questionLabel.text = myQuiz?.question
+            print(rowQuizzes)
+            if let imgUrl = model.quizzesAll[rowQuizzes].attachment?.url {
+                if let img = model.imagesCache[imgUrl] {
+                    quizImage.image = img
+                } else {
+                    quizImage?.image = UIImage(named: "none")
+                    download(imgUrl)
+                }
+            }
+        }
     }
 
+    // Download an image
+    func download(_ urls: String){
+        
+        DispatchQueue.global().async{
+            print("Downloading")
+            if let url = URL(string: urls),
+                let data = try? Data(contentsOf: url),
+                let img = UIImage(data: data){
+                DispatchQueue.main.async {
+                    self.model.imagesCache[urls] = img
+                    // Not to reload all the data only the specific rows.
+                }
+            } else{
+                print("Bad downloading")
+            }
+            
+        }
+    }
+    
     @IBAction func playOnTapped(_ sender: UIButton) {
         play()
     }
