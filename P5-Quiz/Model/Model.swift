@@ -19,6 +19,10 @@ class Model{
     static let myToken = "15285c6fd5a9426d00fb"
     static var authors = [Author]()
     
+    // To check how mnay downloads has been done
+    static var quizzesImage = 0
+    static var imageDownloaded = 0
+    
     // These properties belong to the classes not to the instances
     static var quizzesAll = [Quiz]()
     static var imagesCache = [String:UIImage]()

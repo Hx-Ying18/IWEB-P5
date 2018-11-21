@@ -206,11 +206,13 @@ class QuizzesPageTableViewController: UITableViewController {
     func download(_ urls: String, for indexPath: IndexPath){
         
         DispatchQueue.global().async{
-            print("Downloading")
+            // print("Downloading")
             if let url = URL(string: urls),
                 let data = try? Data(contentsOf: url),
                 let img = UIImage(data: data){
                 DispatchQueue.main.async {
+                    Model.imageDownloaded += 1
+                    print(Model.imageDownloaded)
                     Model.imagesCache[urls] = img
                     // Not to reload all the data only the specific rows.
                     self.tableView.reloadRows(at: [indexPath], with: .fade)
