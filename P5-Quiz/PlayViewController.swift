@@ -11,7 +11,7 @@ import Foundation
 
 class PlayViewController: UIViewController {
 
-    var model = Model()
+    //var model = Model()
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerText: UITextField!
@@ -28,8 +28,8 @@ class PlayViewController: UIViewController {
         if (myQuiz != nil) {
             questionLabel.text = myQuiz?.question
             print(rowQuizzes)
-            if let imgUrl = model.quizzesAll[rowQuizzes].attachment?.url {
-                if let img = model.imagesCache[imgUrl] {
+            if let imgUrl = Model.quizzesAll[rowQuizzes].attachment?.url {
+                if let img = Model.imagesCache[imgUrl] {
                     quizImage.image = img
                 } else {
                     quizImage?.image = UIImage(named: "none")
@@ -48,7 +48,7 @@ class PlayViewController: UIViewController {
                 let data = try? Data(contentsOf: url),
                 let img = UIImage(data: data){
                 DispatchQueue.main.async {
-                    self.model.imagesCache[urls] = img
+                    Model.imagesCache[urls] = img
                     // Not to reload all the data only the specific rows.
                 }
             } else{
@@ -102,9 +102,9 @@ class PlayViewController: UIViewController {
         let replaced = answerString.replacingOccurrences(of: " ", with: "+")
         
         // print(replaced)
-        let base = "\(model.apiURL)\(model.quizzesURL)/1/check?answer="
+        let base = "\(Model.apiURL)\(Model.quizzesURL)/1/check?answer="
         // Create the path
-        let urls = base + replaced + "&token=\(model.myToken)"
+        let urls = base + replaced + "&token=\(Model.myToken)"
         // print(urls)
         //print("1 Path to decode \(path)")
         guard let url = URL(string: urls) else {

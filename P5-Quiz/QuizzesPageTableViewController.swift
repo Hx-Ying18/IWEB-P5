@@ -10,7 +10,7 @@ import UIKit
 
 class QuizzesPageTableViewController: UITableViewController {
 
-    var model = Model()
+    //var model = Model()
     
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
@@ -45,22 +45,22 @@ class QuizzesPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return model.quizzesAll.count
+        return Model.quizzesAll.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Quiz Cell", for: indexPath) as! QuizTableViewCell
         
         // print(model.authors ?? "")
-        let quiz = model.quizzesAll[indexPath.row]
+        let quiz = Model.quizzesAll[indexPath.row]
         cell.authorLabel?.text = quiz.author?.username ?? "Anónimo"
         // print(quiz.author?.username)
         cell.questionLabel?.text = quiz.question
         //cell.imageView?.image = UIImage(named: .icon)
         
         // Only if quiz have attachment it can be downloaded
-        if let imgUrl = model.quizzesAll[indexPath.row].attachment?.url {
-            if let img = model.imagesCache[imgUrl] {
+        if let imgUrl = Model.quizzesAll[indexPath.row].attachment?.url {
+            if let img = Model.imagesCache[imgUrl] {
                 cell.quizImage?.image = img
             } else {
                 cell.quizImage?.image = UIImage(named: "none")
@@ -126,7 +126,7 @@ class QuizzesPageTableViewController: UITableViewController {
             let pvc = segue.destination as! PlayViewController
             
             if let ip = tableView.indexPathForSelectedRow{
-                pvc.myQuiz = model.quizzesAll[ip.row]
+                pvc.myQuiz = Model.quizzesAll[ip.row]
                 pvc.rowQuizzes = ip.row
             }
         }
@@ -154,7 +154,7 @@ class QuizzesPageTableViewController: UITableViewController {
         
         // In the mian is reset the table
         DispatchQueue.main.async {
-            self.model.quizzesAll = []
+            Model.quizzesAll = []
             self.tableView.reloadData()
         }
         
@@ -166,7 +166,7 @@ class QuizzesPageTableViewController: UITableViewController {
         
         //        let session = URLSession.shared // Create a session
         var pageno : Int = pagenoIn// NUmber of the page
-        let path = "\(model.apiURL)\(model.quizzesURL)?token=\(model.myToken)&pageno=\(pageno)" // Create the path
+        let path = "\(Model.apiURL)\(Model.quizzesURL)?token=\(Model.myToken)&pageno=\(pageno)" // Create the path
         //print("1 Path to decode \(path)")
         guard let url = URL(string: path) else {
             print("Bad Url")
@@ -185,7 +185,7 @@ class QuizzesPageTableViewController: UITableViewController {
                     if quizzesPage.nextUrl != "" {
                         DispatchQueue.main.async {
                             //print("2!!!!!!!!!!")
-                            self.model.quizzesAll.append(contentsOf: quizzesPage.quizzes) // EL count celdas se hace sobre él
+                            Model.quizzesAll.append(contentsOf: quizzesPage.quizzes) // EL count celdas se hace sobre él
                             self.tableView.reloadData()
                             pageno += 1 // Tp the next page
                             //print("2 Pageno after saving \(pageno)")
@@ -211,7 +211,7 @@ class QuizzesPageTableViewController: UITableViewController {
                 let data = try? Data(contentsOf: url),
                 let img = UIImage(data: data){
                 DispatchQueue.main.async {
-                    self.model.imagesCache[urls] = img
+                    Model.imagesCache[urls] = img
                     // Not to reload all the data only the specific rows.
                     self.tableView.reloadRows(at: [indexPath], with: .fade)
                 }

@@ -11,7 +11,7 @@ import UIKit
 
 class QuizzesAuthorsTableViewController: UITableViewController {    
     
-    let model = Model()
+    // let model = Model()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // When view did load initially call this download
-        return model.authors.count
+        return Model.authors.count
     }
 
 
@@ -52,7 +52,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Author Cell", for: indexPath)
 
         // print(model.authors ?? "")
-        let author = model.authors[indexPath.row]
+        let author = Model.authors[indexPath.row]
         cell.textLabel?.text = author.username
 
         return cell
@@ -117,7 +117,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
     func downloadAuthors() {
         
         //        let session = URLSession.shared // Create a session
-        let path = "\(model.apiURL)\(model.usersURL)?token=\(model.myToken)" // Create the path
+        let path = "\(Model.apiURL)\(Model.usersURL)?token=\(Model.myToken)" // Create the path
         guard let url = URL(string: path) else {
             print("Bad Url")
             return
@@ -133,7 +133,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
                     // print(authorsDown)
                     DispatchQueue.main.async {
                         // print("2!!!!!!!!!!")
-                        self.model.authors = authorsDown
+                        Model.authors = authorsDown
                         self.tableView.reloadData()
                     }
                 }
