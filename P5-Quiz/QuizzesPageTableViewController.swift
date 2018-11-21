@@ -62,7 +62,12 @@ class QuizzesPageTableViewController: UITableViewController {
         if let imgUrl = Model.quizzesAll[indexPath.row].attachment?.url {
             if let img = Model.imagesCache[imgUrl] {
                 cell.quizImage?.image = img
-            } else {
+            }
+            // Si no tiene imagen Url
+//            if imgUrl == ""{
+//                // No descarga
+//            }
+            else {
                 cell.quizImage?.image = UIImage(named: "none")
                 download(imgUrl, for: indexPath)
             }
@@ -153,13 +158,13 @@ class QuizzesPageTableViewController: UITableViewController {
     func downloadQuizzes(){
         
         // In the mian is reset the table
-        DispatchQueue.main.async {
-            Model.quizzesAll = []
-            self.tableView.reloadData()
+        Model.quizzesAll = []
+        DispatchQueue.global().async {
+            self.download(pagenoIn : 1)
         }
+        self.tableView.reloadData()
         
-        //        let session = URLSession.shared // Create a session
-        download(pagenoIn : 1)
+
     }
     
     func download(pagenoIn : Int){
@@ -186,7 +191,6 @@ class QuizzesPageTableViewController: UITableViewController {
                         DispatchQueue.main.async {
                             //print("2!!!!!!!!!!")
                             Model.quizzesAll.append(contentsOf: quizzesPage.quizzes) // EL count celdas se hace sobre él
-                            self.tableView.reloadData()
                             pageno += 1 // Tp the next page
                             //print("2 Pageno after saving \(pageno)")
                             // Se tiene que meter dentro de la cola para que no haya condiciones de carrera
@@ -218,7 +222,9 @@ class QuizzesPageTableViewController: UITableViewController {
                     self.tableView.reloadRows(at: [indexPath], with: .fade)
                 }
             } else{
-                print("Bad downloading")
+                print("Bad Url")
+                // As the ulr is bad it is assign a url
+                
             }
             
         }
