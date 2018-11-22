@@ -29,6 +29,7 @@ class QuizzesPageTableViewController: UITableViewController {
         
         // Initial load
         updateQuizPage()
+        tableView.estimatedRowHeight = 120
         
     }
     
