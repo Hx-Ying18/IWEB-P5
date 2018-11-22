@@ -134,6 +134,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.7163478325" green="1" blue="0.4925077041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -231,6 +232,7 @@
                                         <constraint firstItem="1mF-Rt-hK4" firstAttribute="leading" secondItem="ntP-So-wRx" secondAttribute="leading" id="alZ-Ss-mZA"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.7163478325" green="1" blue="0.4925077041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="authorLabel" destination="9QS-Xk-34P" id="LQg-6r-t5I"/>
                                     <outlet property="questionLabel" destination="eQt-Cf-KxQ" id="Ori-TI-J5Y"/>
