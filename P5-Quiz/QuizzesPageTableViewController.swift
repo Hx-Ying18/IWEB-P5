@@ -55,6 +55,11 @@ class QuizzesPageTableViewController: UITableViewController {
         
         // print(model.authors ?? "")
         let quiz = Model.quizzesAll[indexPath.row]
+        
+        cell.id = quiz.id
+        cell.closureOn = {
+            //upload data. COmo se lo pongo
+        }
         cell.authorLabel?.text = quiz.author?.username ?? "Anónimo"
         // print(quiz.author?.username)
         cell.questionLabel?.text = quiz.question
@@ -164,7 +169,7 @@ class QuizzesPageTableViewController: UITableViewController {
         DispatchQueue.global().async {
             self.download(pagenoIn : 1)
         }
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
         
 
     }
@@ -193,6 +198,7 @@ class QuizzesPageTableViewController: UITableViewController {
                         DispatchQueue.main.async {
                             //print("2!!!!!!!!!!")
                             Model.quizzesAll.append(contentsOf: quizzesPage.quizzes) // EL count celdas se hace sobre él
+                            self.tableView.reloadData()
                             pageno += 1 // Tp the next page
                             print("Pageno= \(pageno)")
                             //print("2 Pageno after saving \(pageno)")

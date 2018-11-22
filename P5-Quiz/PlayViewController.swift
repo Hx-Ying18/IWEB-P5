@@ -106,7 +106,7 @@ class PlayViewController: UIViewController {
         // Create the path
         let urls = base + replaced + "&token=\(Model.myToken)"
         // print(urls)
-        //print("1 Path to decode \(path)")
+        print("1 Path to decode \(urls)")
         guard let url = URL(string: urls) else {
             print("Bad Url")
             return

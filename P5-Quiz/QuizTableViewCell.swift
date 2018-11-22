@@ -20,6 +20,12 @@ class QuizTableViewCell: UITableViewCell {
 
     @IBOutlet weak var starButton: UIButton!
     
+    var id : Int = 0
+    
+    //Encender el favorito
+    // volver a poner
+    var closureOn : () -> () = {}
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -27,8 +33,16 @@ class QuizTableViewCell: UITableViewCell {
     }
 
     @IBAction func favTap(_ sender: UIButton) {
-        let star = quizStar.image ? UIImage(named: "starOn") : UIImage(named: "starOff")
-        cell.starButton.setImage(star, for: .normal)
+        if let mitabla = superview as? UITableView  {
+            if let ip = mitabla.indexPath(for: self)  {
+                print(ip)
+               }
+             }
+            
+            
+//        let star = quizStar.image ? UIImage(named: "starOn") : UIImage(named: "starOff")
+//        cell.starButton.setImage(star, for: .normal)
         //Put
+        //Users/())/favourites/:quizId
     }
 }
