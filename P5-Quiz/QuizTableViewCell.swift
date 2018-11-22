@@ -29,5 +29,6 @@ class QuizTableViewCell: UITableViewCell {
     @IBAction func favTap(_ sender: UIButton) {
         let star = quizStar.image ? UIImage(named: "starOn") : UIImage(named: "starOff")
         cell.starButton.setImage(star, for: .normal)
+        //Put
     }
 }
