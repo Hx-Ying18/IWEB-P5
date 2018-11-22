@@ -29,6 +29,7 @@ class QuizzesPageTableViewController: UITableViewController {
         
         // Initial load
         updateQuizPage()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -192,6 +193,7 @@ class QuizzesPageTableViewController: UITableViewController {
                             //print("2!!!!!!!!!!")
                             Model.quizzesAll.append(contentsOf: quizzesPage.quizzes) // EL count celdas se hace sobre él
                             pageno += 1 // Tp the next page
+                            print("Pageno= \(pageno)")
                             //print("2 Pageno after saving \(pageno)")
                             // Se tiene que meter dentro de la cola para que no haya condiciones de carrera
                             // Mete el que se ha calculado
@@ -201,6 +203,7 @@ class QuizzesPageTableViewController: UITableViewController {
                         
                     }
                     // print("Quit")
+                    //self.tableView.reloadData()
                 }
             }
         }
