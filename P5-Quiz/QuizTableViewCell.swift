@@ -55,13 +55,17 @@ class QuizTableViewCell: UITableViewCell {
 //                    if let mitablaController = superview as? QuizzesPageTableViewController{
 //                         mitablaController.reloadRows(at: [ip], with: .fade)
 //                    }
-
+                    let urlDelete = "\(Model.apiURL)/users/tokenOwner/favourites/\(Model.quizzesAll[ip.row].id)?token=\(Model.myToken)"
+                    deleteFavourites(urlDelete)
                     print("\(Model.apiURL)/users/tokenOwner/favourites/\(Model.quizzesAll[ip.row].id)?token=\(Model.myToken)")
+                    
                 }
                 else  {
                     Model.quizzesAll[ip.row].favourite = true
                     //starButton.setImage(#imageLiteral(resourceName: "starOn"), for: .normal)
                     mitabla.reloadRows(at: [ip], with: .fade)
+                    let urlPut = "\(Model.apiURL)/users/tokenOwner/favourites/\(Model.quizzesAll[ip.row].id)?token=\(Model.myToken)"
+                    putFavourites(urlPut)
                 }
 //
 ////                for quiz in Model.quizzesAll {
@@ -76,5 +80,54 @@ class QuizTableViewCell: UITableViewCell {
 //        cell.starButton.setImage(star, for: .normal)
         //Put
         //Users/())/favourites/:quizId
+    }
+    
+    func putFavourites(_ urls : String) {
+        DispatchQueue.global().async{
+            let url = URL(string: urls)
+            var request = URLRequest(url: url!)
+            request.httpMethod = "PUT"
+            let task = URLSession.shared.dataTask(with: request){
+                data, response, error in
+                guard let data = data, error == nil else{
+                    print("error=\(error)")
+                    return
+                }
+                
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(response)")
+                }
+                
+                let responseString = String(data: data, encoding: .utf8)
+                print("responseString = \(responseString)")
+            }
+            task.resume()
+            
+        }
+    }
+    func deleteFavourites(_ urls : String) {
+        DispatchQueue.global().async{
+            let url = URL(string: urls)
+            var request = URLRequest(url: url!)
+            request.httpMethod = "DELETE"
+            let task = URLSession.shared.dataTask(with: request){
+                data, response, error in
+                guard let data = data, error == nil else{
+                    print("error=\(error)")
+                    return
+                }
+                
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(response)")
+                }
+                
+                let responseString = String(data: data, encoding: .utf8)
+                print("responseString = \(responseString)")
+            }
+            task.resume()
+            
+        }
     }
 }
