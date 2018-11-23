@@ -135,6 +135,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
                         // print("2!!!!!!!!!!")
                         Model.authors = authorsDown
                         self.tableView.reloadData()
+                        print("reload")
                     }
                 }
             }

@@ -58,10 +58,10 @@ class QuizzesPageTableViewController: UITableViewController {
         
 //        cell.indexPathRow = [indexPath.row](0)
 //        print("cell.indexPathRow \(cell.indexPathRow)")
-        cell.closureReload = {
-            //upload data. COmo se lo pongo
-            
-        }
+//        cell.closureReload = {
+//            //upload data. COmo se lo pongo
+//
+//        }
         cell.authorLabel?.text = quiz.author?.username ?? "Anónimo"
         // print(quiz.author?.username)
         cell.questionLabel?.text = quiz.question

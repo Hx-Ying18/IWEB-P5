@@ -18,11 +18,11 @@ class QuizTableViewCell: UITableViewCell {
 
     @IBOutlet weak var starButton: UIButton!
     
-    var indexPathRow : Int = 0
+//    var indexPathRow : Int = 0
     
     //Encender el favorito
     // volver a poner
-    var closureReload : () -> () = {}
+//    var closureReload : () -> () = {}
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -31,7 +31,8 @@ class QuizTableViewCell: UITableViewCell {
     }
 
     @IBAction func favTap(_ sender: UIButton) {
-        
+     
+        // -> I tried with the closure but did not work
 //        let quiz = Model.quizzesAll[indexPathRow]
 //        if (quiz.favourite) {
 //            Model.quizzesAll[indexPathRow].favourite = false
@@ -41,7 +42,7 @@ class QuizTableViewCell: UITableViewCell {
         // DOes not realod properly
         if let mitabla = superview as? UITableView  {
             if let ip = mitabla.indexPath(for: self)  {
-                print("Index path \(ip)")
+                // print("Index path \(ip)")
                 // NO need to look only to index
 
                 let quiz = Model.quizzesAll[ip.row]
