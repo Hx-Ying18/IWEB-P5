@@ -12,5 +12,5 @@ import Foundation
 struct Author: Decodable {
     let id: Int
     let isAdmin: Bool?
-    let username: String
+    let username: String?
 }

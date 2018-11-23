@@ -19,9 +19,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="mfL-oD-wEE">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="!Arrastra para ver los autores¡" id="n38-uf-XgI"/>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Author Cell" textLabel="imv-j4-Peg" style="IBUITableViewCellStyleDefault" id="Isd-2F-hWg">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Isd-2F-hWg" id="cTO-uu-CFH">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -44,13 +51,10 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Autores" id="jeH-Jb-Hqo"/>
-                    <navigationItem key="navigationItem" title="Title" id="5O3-qX-I8B">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="iMb-N9-zqV"/>
-                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWb-Ki-3tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89" y="-595"/>
+            <point key="canvasLocation" x="-89" y="-559"/>
         </scene>
         <!--Title-->
         <scene sceneID="J5O-W7-o2N">

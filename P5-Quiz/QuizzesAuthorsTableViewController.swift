@@ -26,6 +26,7 @@ class QuizzesAuthorsTableViewController: UITableViewController {
         
         // When it is loaded authors are loaded
         downloadAuthors()
+        tableView.estimatedRowHeight = 100
         
     }
 
@@ -49,11 +50,12 @@ class QuizzesAuthorsTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Author Cell", for: indexPath)
-
         // print(model.authors ?? "")
         let author = Model.authors[indexPath.row]
         cell.textLabel?.text = author.username
+        
 
         return cell
     }
@@ -123,21 +125,23 @@ class QuizzesAuthorsTableViewController: UITableViewController {
             return
             
         } // Unwrap the url
+        print("\(path)")
         
         DispatchQueue.global().async{
             if let data = try? Data(contentsOf: url){
                 // If bad, if gives a nil
-                // print("!!!!!!!!!!")
+                print("!!!!!!!!!!")
                 let decoder = JSONDecoder()
                 if let authorsDown = try? decoder.decode([Author].self, from: data) {
                     // print(authorsDown)
+                    Model.authors = authorsDown
+                    print("2!!!!!!!!!!")
                     DispatchQueue.main.async {
-                        // print("2!!!!!!!!!!")
-                        Model.authors = authorsDown
                         self.tableView.reloadData()
                         print("reload")
                     }
                 }
+                print("Bad decoding")
             }
         }
     }
