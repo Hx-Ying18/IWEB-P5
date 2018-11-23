@@ -33,17 +33,24 @@ class QuizTableViewCell: UITableViewCell {
     @IBAction func favTap(_ sender: UIButton) {
         if let mitabla = superview as? UITableView  {
             if let ip = mitabla.indexPath(for: self)  {
-                print(ip)
+                print("Index path \(ip)")
                 // NO need to look only to index
                 
-                var quiz = Model.quizzesAll[ip.row]
+                let quiz = Model.quizzesAll[ip.row]
                 if (quiz.favourite) {
                     Model.quizzesAll[ip.row].favourite = false
-                    starButton.setImage(#imageLiteral(resourceName: "starOff"), for: .normal)
+                    // starButton.setImage(#imageLiteral(resourceName: "starOff"), for: .normal)
+                    // To realod the value
+                    //mitabla.reloadData()
+//                    if let mitablaController = superview as? QuizzesPageTableViewController{
+//                         mitablaController.reloadRows(at: [ip], with: .fade)
+//                    }
                     
-                    print("\(Model.apiURL)/users/\(Model.myToken)/favourites/\(Model.quizzesAll[ip.row].id)")
+                    print("\(Model.apiURL)/users/tokenOwner/favourites/\(Model.quizzesAll[ip.row].id)?token=\(Model.myToken)")
                 }
                 else  {
+                    Model.quizzesAll[ip.row].favourite = true
+                    starButton.setImage(#imageLiteral(resourceName: "starOn"), for: .normal)
                 }
                 
 //                for quiz in Model.quizzesAll {
