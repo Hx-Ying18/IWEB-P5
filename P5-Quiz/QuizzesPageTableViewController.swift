@@ -168,6 +168,8 @@ class QuizzesPageTableViewController: UITableViewController {
         
         // In the mian is reset the table
         Model.quizzesAll = []
+        refreshButton.isEnabled = false
+        refreshButton.tintColor = UIColor.clear
         DispatchQueue.global().async {
             self.download(pagenoIn : 1)
         }
@@ -201,7 +203,7 @@ class QuizzesPageTableViewController: UITableViewController {
                             //print("2!!!!!!!!!!")
                             Model.quizzesAll.append(contentsOf: quizzesPage.quizzes) // EL count celdas se hace sobre él
                             // It is reload the data when it is here
-                            self.tableView.reloadData()
+//                            self.tableView.reloadData()
                             pageno += 1 // Tp the next page
                             print("Pageno= \(pageno)")
                             //print("2 Pageno after saving \(pageno)")
@@ -210,10 +212,15 @@ class QuizzesPageTableViewController: UITableViewController {
                             //print("3 Pageno request \(pageno)")
                             self.download(pagenoIn: pageno)
                         }
-                        
                     }
                     // print("Quit")
                     //self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        self.refreshButton.isEnabled = true
+                        self.refreshButton.tintColor = UIColor.green
+                    }
+        
                 }
             }
         }
@@ -229,7 +236,7 @@ class QuizzesPageTableViewController: UITableViewController {
                 let img = UIImage(data: data){
                 DispatchQueue.main.async {
                     Model.imageDownloaded += 1
-                    print(Model.imageDownloaded)
+                    print("\(Model.imageDownloaded) \(urls)")
                     Model.imagesCache[urls] = img
                     // Not to reload all the data only the specific rows.
                     self.tableView.reloadRows(at: [indexPath], with: .fade)

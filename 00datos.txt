@@ -3,4 +3,6 @@ g831
 Hengxuan Ying
 Adrián Blázquez León
 
-	Nótese, que además de la funcionalidad requerida: mediante peticiones put y delete se actualizan los favoritos en la página de quizzes, se representa en una pestaña los autores y los textos se adaptan al tamaño que pueda configurar el usuario en el menú de accesibilidad de su iPhone 
+	Nótese, que además de la funcionalidad requerida: mediante peticiones put y delete se actualizan los favoritos en la página de quizzes, se representa en una pestaña los autores y los textos se adaptan al tamaño que pueda configurar el usuario en el menú de accesibilidad de su iPhone.
+
+       He intentado colocar la estrella encima del disclosure indicator ajustando a -20, pero no dejan las restricciones de auto layout. 
