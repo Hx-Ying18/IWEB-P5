@@ -56,9 +56,11 @@ class QuizzesPageTableViewController: UITableViewController {
         // print(model.authors ?? "")
         let quiz = Model.quizzesAll[indexPath.row]
         
-        cell.id = quiz.id
-        cell.closureOn = {
+        cell.indexPathRow = [indexPath.row](0)
+        print("cell.indexPathRow \(cell.indexPathRow)")
+        cell.closureReload = {
             //upload data. COmo se lo pongo
+            
         }
         cell.authorLabel?.text = quiz.author?.username ?? "Anónimo"
         // print(quiz.author?.username)
