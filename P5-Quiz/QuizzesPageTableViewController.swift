@@ -198,6 +198,7 @@ class QuizzesPageTableViewController: UITableViewController {
                         DispatchQueue.main.async {
                             //print("2!!!!!!!!!!")
                             Model.quizzesAll.append(contentsOf: quizzesPage.quizzes) // EL count celdas se hace sobre él
+                            // It is reload the data when it is here
                             self.tableView.reloadData()
                             pageno += 1 // Tp the next page
                             print("Pageno= \(pageno)")

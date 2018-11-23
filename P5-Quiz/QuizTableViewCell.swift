@@ -12,8 +12,6 @@ class QuizTableViewCell: UITableViewCell {
 
     @IBOutlet weak var quizImage: UIImageView!
     
-    @IBOutlet weak var quizStar: UIImageView!
-    
     @IBOutlet weak var authorLabel: UILabel!
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -36,6 +34,21 @@ class QuizTableViewCell: UITableViewCell {
         if let mitabla = superview as? UITableView  {
             if let ip = mitabla.indexPath(for: self)  {
                 print(ip)
+                // NO need to look only to index
+                
+                var quiz = Model.quizzesAll[ip.row]
+                if (quiz.favourite) {
+                    Model.quizzesAll[ip.row].favourite = false
+                    starButton.setImage(#imageLiteral(resourceName: "starOff"), for: .normal)
+                    
+                    print("\(Model.apiURL)/users/\(Model.myToken)/favourites/\(Model.quizzesAll[ip.row].id)")
+                }
+                else  {
+                }
+                
+//                for quiz in Model.quizzesAll {
+//                    // It has been filled with the indexPath.row
+//                    if(quiz.id ==
                 
                }
              }

@@ -16,7 +16,7 @@ struct Quiz: Decodable {
     let question: String
     let author: Author?
     let attachment: Attachment?
-    let favourite: Bool
+    var favourite: Bool // So to change this property
     let tips: [String]?
 }
 
