@@ -36,6 +36,7 @@ class QuizTableViewCell: UITableViewCell {
         if let mitabla = superview as? UITableView  {
             if let ip = mitabla.indexPath(for: self)  {
                 print(ip)
+                
                }
              }
             
