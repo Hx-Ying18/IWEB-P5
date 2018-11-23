@@ -59,6 +59,7 @@ class PlayViewController: UIViewController {
     }
     
     @IBAction func playOnTapped(_ sender: UIButton) {
+        
         play()
     }
     
@@ -102,7 +103,7 @@ class PlayViewController: UIViewController {
         let replaced = answerString.replacingOccurrences(of: " ", with: "+")
         
         // print(replaced)
-        let base = "\(Model.apiURL)\(Model.quizzesURL)/1/check?answer="
+        let base = "\(Model.apiURL)\(Model.quizzesURL)/\(myQuiz!.id)/check?answer="
         // Create the path
         let urls = base + replaced + "&token=\(Model.myToken)"
         // print(urls)
