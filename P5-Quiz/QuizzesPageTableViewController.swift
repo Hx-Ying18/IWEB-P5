@@ -56,8 +56,8 @@ class QuizzesPageTableViewController: UITableViewController {
         // print(model.authors ?? "")
         let quiz = Model.quizzesAll[indexPath.row]
         
-        cell.indexPathRow = [indexPath.row](0)
-        print("cell.indexPathRow \(cell.indexPathRow)")
+//        cell.indexPathRow = [indexPath.row](0)
+//        print("cell.indexPathRow \(cell.indexPathRow)")
         cell.closureReload = {
             //upload data. COmo se lo pongo
             

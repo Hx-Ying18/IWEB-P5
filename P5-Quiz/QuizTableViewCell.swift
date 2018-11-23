@@ -32,40 +32,43 @@ class QuizTableViewCell: UITableViewCell {
 
     @IBAction func favTap(_ sender: UIButton) {
         
-        let quiz = Model.quizzesAll[indexPathRow]
-        if (quiz.favourite) {
-            Model.quizzesAll[indexPathRow].favourite = false
-            closureReload
-        }
+//        let quiz = Model.quizzesAll[indexPathRow]
+//        if (quiz.favourite) {
+//            Model.quizzesAll[indexPathRow].favourite = false
+//            closureReload
+//        }
         
         // DOes not realod properly
-//        if let mitabla = superview as? UITableView  {
-//            if let ip = mitabla.indexPath(for: self)  {
-//                print("Index path \(ip)")
-//                // NO need to look only to index
-//
-//                let quiz = Model.quizzesAll[ip.row]
-//                if (quiz.favourite) {
-//                    Model.quizzesAll[ip.row].favourite = false
-//                    // starButton.setImage(#imageLiteral(resourceName: "starOff"), for: .normal)
-//                    // To realod the value
-//                    //mitabla.reloadData()
-////                    if let mitablaController = superview as? QuizzesPageTableViewController{
-////                         mitablaController.reloadRows(at: [ip], with: .fade)
-////                    }
-//
-//                    print("\(Model.apiURL)/users/tokenOwner/favourites/\(Model.quizzesAll[ip.row].id)?token=\(Model.myToken)")
-//                }
-//                else  {
-//                    Model.quizzesAll[ip.row].favourite = true
-//                    starButton.setImage(#imageLiteral(resourceName: "starOn"), for: .normal)
-//                }
+        if let mitabla = superview as? UITableView  {
+            if let ip = mitabla.indexPath(for: self)  {
+                print("Index path \(ip)")
+                // NO need to look only to index
+
+                let quiz = Model.quizzesAll[ip.row]
+                if (quiz.favourite) {
+                    Model.quizzesAll[ip.row].favourite = false
+                    mitabla.reloadRows(at: [ip], with: .fade)
+                    
+                    // starButton.setImage(#imageLiteral(resourceName: "starOff"), for: .normal)
+                    // To realod the value
+                    //mitabla.reloadData()
+//                    if let mitablaController = superview as? QuizzesPageTableViewController{
+//                         mitablaController.reloadRows(at: [ip], with: .fade)
+//                    }
+
+                    print("\(Model.apiURL)/users/tokenOwner/favourites/\(Model.quizzesAll[ip.row].id)?token=\(Model.myToken)")
+                }
+                else  {
+                    Model.quizzesAll[ip.row].favourite = true
+                    //starButton.setImage(#imageLiteral(resourceName: "starOn"), for: .normal)
+                    mitabla.reloadRows(at: [ip], with: .fade)
+                }
 //
 ////                for quiz in Model.quizzesAll {
 ////                    // It has been filled with the indexPath.row
 ////                    if(quiz.id ==
 //
-//               }
+               }
              }
             
             
@@ -73,5 +76,5 @@ class QuizTableViewCell: UITableViewCell {
 //        cell.starButton.setImage(star, for: .normal)
         //Put
         //Users/())/favourites/:quizId
-    //}
+    }
 }
