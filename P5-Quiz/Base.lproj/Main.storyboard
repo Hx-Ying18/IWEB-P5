@@ -244,7 +244,7 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcN-va-9H5" userLabel="starButton">
-                                            <rect key="frame" x="277" y="0.0" width="64" height="64.5"/>
+                                            <rect key="frame" x="297" y="0.0" width="64" height="64.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="WcN-va-9H5" secondAttribute="height" multiplier="1:1" id="HQe-Kn-SPj"/>
                                             </constraints>
@@ -259,10 +259,9 @@
                                         <constraint firstItem="WcN-va-9H5" firstAttribute="top" secondItem="ntP-So-wRx" secondAttribute="top" id="PNl-Hn-wU1"/>
                                         <constraint firstItem="WcN-va-9H5" firstAttribute="top" secondItem="ntP-So-wRx" secondAttribute="top" id="UNd-cd-MNE"/>
                                         <constraint firstAttribute="bottom" secondItem="1mF-Rt-hK4" secondAttribute="bottom" id="UXS-gb-jOa"/>
-                                        <constraint firstAttribute="trailing" secondItem="WcN-va-9H5" secondAttribute="trailing" id="Upr-Pg-BwK"/>
                                         <constraint firstItem="1mF-Rt-hK4" firstAttribute="top" secondItem="ntP-So-wRx" secondAttribute="top" id="Y7y-Rc-k22"/>
                                         <constraint firstItem="1mF-Rt-hK4" firstAttribute="leading" secondItem="ntP-So-wRx" secondAttribute="leading" id="alZ-Ss-mZA"/>
-                                        <constraint firstAttribute="trailing" secondItem="WcN-va-9H5" secondAttribute="trailing" id="xs4-xF-gKv"/>
+                                        <constraint firstAttribute="trailing" secondItem="WcN-va-9H5" secondAttribute="trailing" constant="-20" id="xs4-xF-gKv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.7163478325" green="1" blue="0.4925077041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
