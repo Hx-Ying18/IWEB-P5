@@ -233,7 +233,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long  Question " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQt-Cf-KxQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="500" text="Long  Question " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQt-Cf-KxQ">
                                                             <rect key="frame" x="0.0" y="108" width="128.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
@@ -243,9 +243,11 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcN-va-9H5" userLabel="starButton">
-                                            <rect key="frame" x="306" y="0.0" width="65" height="71"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcN-va-9H5" userLabel="starButton">
+                                            <rect key="frame" x="277" y="0.0" width="64" height="64.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="WcN-va-9H5" secondAttribute="height" multiplier="1:1" id="HQe-Kn-SPj"/>
+                                            </constraints>
                                             <state key="normal" title="Button" image="starOff"/>
                                             <connections>
                                                 <action selector="favTap:" destination="RKV-YH-g7j" eventType="touchUpInside" id="ELJ-wf-EAc"/>
@@ -253,9 +255,14 @@
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="WcN-va-9H5" firstAttribute="height" secondItem="ntP-So-wRx" secondAttribute="height" multiplier="0.5" id="Chg-Qv-ZVS"/>
+                                        <constraint firstItem="WcN-va-9H5" firstAttribute="top" secondItem="ntP-So-wRx" secondAttribute="top" id="PNl-Hn-wU1"/>
+                                        <constraint firstItem="WcN-va-9H5" firstAttribute="top" secondItem="ntP-So-wRx" secondAttribute="top" id="UNd-cd-MNE"/>
                                         <constraint firstAttribute="bottom" secondItem="1mF-Rt-hK4" secondAttribute="bottom" id="UXS-gb-jOa"/>
+                                        <constraint firstAttribute="trailing" secondItem="WcN-va-9H5" secondAttribute="trailing" id="Upr-Pg-BwK"/>
                                         <constraint firstItem="1mF-Rt-hK4" firstAttribute="top" secondItem="ntP-So-wRx" secondAttribute="top" id="Y7y-Rc-k22"/>
                                         <constraint firstItem="1mF-Rt-hK4" firstAttribute="leading" secondItem="ntP-So-wRx" secondAttribute="leading" id="alZ-Ss-mZA"/>
+                                        <constraint firstAttribute="trailing" secondItem="WcN-va-9H5" secondAttribute="trailing" id="xs4-xF-gKv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.7163478325" green="1" blue="0.4925077041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
