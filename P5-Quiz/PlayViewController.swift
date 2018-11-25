@@ -73,7 +73,7 @@ class PlayViewController: UIViewController {
             let ttvc = segue.destination as! TipsTableViewController
             
             ttvc.myTips = myQuiz?.tips
-            
+        
         }
     }
 

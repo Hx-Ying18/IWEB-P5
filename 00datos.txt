@@ -3,4 +3,4 @@ g831
 Hengxuan Ying
 Adrián Blázquez León
 
-	Nótese, que además de la funcionalidad requerida: mediante peticiones put y delete se actualizan los favoritos en la página de quizzes, se representa en una pestaña los autores y los textos se adaptan al tamaño que pueda configurar el usuario en el menú de accesibilidad de su iPhone. También, se observa que aunque se haya ajustado la estrella a -20, no consigue renderizarse encima del disclosure indicator.
+	Además de la funcionalidad requerida: (1) mediante peticiones put y delete se actualizan los favoritos en la página de quizzes, (2) se representa en una pestaña los autores y (3) los textos se adaptan al tamaño que pueda configurar el usuario en el menú de accesibilidad de su iPhone. También, se observa que aunque se haya ajustado la estrella a -20, no consigue renderizarse encima del disclosure indicator, y que puede que la aplicación no descargue quizzes si no funciona la página de quizzes.
