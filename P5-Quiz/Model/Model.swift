@@ -16,7 +16,7 @@ class Model{
     static let apiURL = "https://quiz2019.herokuapp.com/api"
     static let usersURL = "/users"
     static let quizzesURL = "/quizzes"
-    static let myToken = "15285c6fd5a9426d00fb"
+    static let myToken = "acc820fa0f4d47c1fd3c"
     static var authors = [Author]()
     
     // To check how mnay downloads has been done
